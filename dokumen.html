@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Konsep penyempurnaan desain PERADI NOBILITI. Integritas, independensi, dan akses keadilan.">
-<title>Pusat Dokumen & Regulasi — PERADI NOBILITI (v6.3b)</title>
+<title>Pusat Dokumen & Regulasi — PERADI NOBILITI (v6.4b)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -495,6 +495,235 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
   border-radius: 2px;
 }
 
+/* === INDEX.HTML & FOOTER MARGIN TWEAKS (v6.4b) === */
+.contact-section {
+  margin-top: 80px !important;
+  padding: 40px 0 90px !important;
+}
+.contact-box {
+  margin-top: 25px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.footer {
+  margin-top: 40px !important;
+}
+.footer-social-strip {
+  margin: 45px auto 0 !important;
+  padding-top: 35px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.footer-contact-box {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  line-height: 1.55;
+  color: #c5cfdd;
+}
+.footer-contact-box strong {
+  color: #fff;
+  font-size: 13px;
+}
+.footer-contact-box p {
+  margin: 0 0 10px;
+}
+
+/* === FLOATING WHATSAPP BUTTON & POPOVER (v6.4b) === */
+.wa-floating-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  font-family: var(--sans);
+}
+.wa-floating-btn {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 3px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.wa-floating-btn:hover {
+  transform: scale(1.08);
+  background: #20ba59;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.wa-floating-btn:active {
+  transform: scale(0.95);
+}
+.wa-fab-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.wa-fab-tooltip {
+  position: absolute;
+  right: 74px;
+  background: rgba(11, 25, 50, 0.95);
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(198, 166, 104, 0.3);
+}
+.wa-floating-btn:hover .wa-fab-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Popover Menu */
+.wa-floating-menu {
+  position: absolute;
+  bottom: 76px;
+  right: 0;
+  width: 335px;
+  background: #0b1932;
+  border: 1px solid rgba(198, 166, 104, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.9) translateY(12px);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.wa-floating-menu.open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+.wa-menu-header {
+  background: linear-gradient(135deg, #102447, #0b1932);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.wa-menu-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+}
+.wa-menu-title svg {
+  width: 20px;
+  height: 20px;
+  color: #25D366;
+}
+.wa-menu-close {
+  background: transparent;
+  border: none;
+  color: #c5cfdd;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+.wa-menu-close:hover {
+  color: #fff;
+}
+.wa-menu-body {
+  padding: 16px 18px;
+}
+.wa-menu-desc {
+  margin: 0 0 14px;
+  font-size: 12.5px;
+  color: #c5cfdd;
+  line-height: 1.5;
+}
+.wa-channel-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.wa-channel-btn:hover {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: rgba(37, 211, 102, 0.45);
+  transform: translateX(2px);
+}
+.wa-channel-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.wa-channel-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.wa-channel-info {
+  flex: 1;
+}
+.wa-channel-info strong {
+  display: block;
+  font-size: 13.5px;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.wa-channel-info span {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+.wa-arrow {
+  width: 16px;
+  height: 16px;
+  color: #c5cfdd;
+  flex: none;
+  transition: transform 0.2s, color 0.2s;
+}
+.wa-channel-btn:hover .wa-arrow {
+  transform: translateX(3px);
+  color: #25D366;
+}
+.wa-menu-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #8c9ba5;
+}
+.wa-menu-footer svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold);
+}
+
 </style>
 </head>
 <body>
@@ -727,6 +956,19 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
 <a href="tentang.html#organisasi">Kepengurusan DPN</a>
 <a href="kontak.html#faq">Pertanyaan Umum</a>
 <a href="kontak.html">Kontak Sekretariat</a>
+<div class="footer-contact-box">
+  <p>
+    <strong>Alamat Sekretariat DPN:</strong><br>
+    Jalan Johar Baru II No. 12, RT 004/RW 009<br>
+    Kel. Johar Baru, Kec. Johar Baru<br>
+    Jakarta Pusat 10560
+  </p>
+  <p style="margin-bottom:0;">
+    <strong>Jam Layanan:</strong><br>
+    Senin – Jumat, 09.00 – 16.00 WIB<br>
+    <small style="color:var(--silver);">(Kunjungan fisik dengan konfirmasi janji temu)</small>
+  </p>
+</div>
 
 </div>
 </div>
@@ -751,8 +993,50 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
         </a>
       </div>
     </div>
-</div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v6.3b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
+</div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v6.4b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
 <a href="#main" class="back-top" aria-label="Kembali ke atas"><svg class="icon"><use href="#arrow"/></svg></a>
+
+<!-- Floating WhatsApp Button & Popover (v6.4b) -->
+<div class="wa-floating-container" id="wa-floating-container">
+  <div class="wa-floating-menu" id="wa-floating-menu" aria-hidden="true">
+    <div class="wa-menu-header">
+      <div class="wa-menu-title">
+        <svg><use href="#icon-whatsapp"/></svg>
+        <span>Hubungi Sekretariat DPN</span>
+      </div>
+      <button class="wa-menu-close" id="wa-menu-close" aria-label="Tutup menu WhatsApp">×</button>
+    </div>
+    <div class="wa-menu-body">
+      <p class="wa-menu-desc">Silakan pilih saluran WhatsApp resmi PERADI NOBILITI untuk konsultasi &amp; informasi:</p>
+      <a href="https://wa.me/6285856006789" target="_blank" rel="noopener noreferrer" class="wa-channel-btn">
+        <div class="wa-channel-icon"><svg><use href="#icon-whatsapp"/></svg></div>
+        <div class="wa-channel-info">
+          <strong>Hotline WhatsApp 1</strong>
+          <span>+62 858-5600-6789</span>
+        </div>
+        <svg class="wa-arrow"><use href="#arrow"/></svg>
+      </a>
+      <a href="https://wa.me/6285138485567" target="_blank" rel="noopener noreferrer" class="wa-channel-btn">
+        <div class="wa-channel-icon"><svg><use href="#icon-whatsapp"/></svg></div>
+        <div class="wa-channel-info">
+          <strong>Hotline WhatsApp 2</strong>
+          <span>+62 851-3848-5567</span>
+        </div>
+        <svg class="wa-arrow"><use href="#arrow"/></svg>
+      </a>
+      <div class="wa-menu-footer">
+        <svg><use href="#clock"/></svg>
+        <span>Senin – Jumat: 09.00 – 16.00 WIB</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="wa-floating-btn" id="wa-floating-toggle" aria-expanded="false" aria-label="Konsultasi WhatsApp">
+    <svg class="wa-fab-icon"><use href="#icon-whatsapp"/></svg>
+    <span class="wa-fab-tooltip">Chat WhatsApp</span>
+  </button>
+</div>
+
 <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="dialog-close" aria-label="Tutup dialog"><svg class="icon"><use href="#plus"/></svg></button></div><div class="dialog-body" id="dialog-body"></div></dialog>
 <script>
 // Deklarasi helper global paling awal
@@ -1206,6 +1490,58 @@ if('IntersectionObserver' in window){
     if(el) observer.observe(el);
   });
 }
+
+// Floating WhatsApp Button Handler (v6.4b)
+const waToggleBtn = $('#wa-floating-toggle');
+const waMenu = $('#wa-floating-menu');
+const waCloseBtn = $('#wa-menu-close');
+
+if (waToggleBtn && waMenu) {
+  waToggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = waMenu.classList.contains('open');
+    if (isOpen) {
+      waMenu.classList.remove('open');
+      waMenu.setAttribute('aria-hidden', 'true');
+      waToggleBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      waMenu.classList.add('open');
+      waMenu.setAttribute('aria-hidden', 'false');
+      waToggleBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  if (waCloseBtn) {
+    waCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      waMenu.classList.remove('open');
+      waMenu.setAttribute('aria-hidden', 'true');
+      waToggleBtn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#wa-floating-container')) {
+      if (waMenu.classList.contains('open')) {
+        waMenu.classList.remove('open');
+        waMenu.setAttribute('aria-hidden', 'true');
+        waToggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && waMenu.classList.contains('open')) {
+      waMenu.classList.remove('open');
+      waMenu.setAttribute('aria-hidden', 'true');
+      waToggleBtn.setAttribute('aria-expanded', 'false');
+      waToggleBtn.focus();
+    }
+  });
+}
+
 </script>
 </body>
 </html>
