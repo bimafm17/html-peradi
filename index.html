@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Konsep penyempurnaan desain PERADI NOBILITI. Integritas, independensi, dan akses keadilan.">
-<title>PERADI NOBILITI — Kehormatan Profesi, Akses Keadilan (v7.2.3b)</title>
+<title>PERADI NOBILITI — Kehormatan Profesi, Akses Keadilan (v8b)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -495,7 +495,7 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
   border-radius: 2px;
 }
 
-/* === INDEX.HTML & FOOTER MARGIN TWEAKS (v7.2.3b) === */
+/* === INDEX.HTML & FOOTER MARGIN TWEAKS (v8b) === */
 .contact-section {
   margin-top: 85px !important;
   padding: 40px 0 90px !important;
@@ -525,7 +525,7 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
   font-size: 13px;
 }
 
-/* === FLOATING WHATSAPP BUTTON & POPOVER (v7.2.3b) === */
+/* === FLOATING WHATSAPP BUTTON & POPOVER (v8b) === */
 .wa-floating-container {
   position: fixed !important;
   bottom: 28px !important;
@@ -742,6 +742,18 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
   transform: scale(1.05) !important;
 }
 
+
+/* === VIDEO & TOKOH SECTION CSS (v8b) === */
+.video-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(11,25,50,.08);border-color:var(--gold)}
+.video-frame-wrap{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
+.video-frame-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video-card-body{padding:26px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.video-speaker-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em}
+.video-card-body h3{font-size:18px;color:var(--navy);margin:0;line-height:1.4}
+.video-speaker-role{font-size:13px;color:var(--muted);font-weight:600;margin:0}
+.video-card-body p{font-size:14px;color:var(--ink);line-height:1.6;margin:0}
+
 </style>
 </head>
 <body>
@@ -824,6 +836,54 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
     </div>
   </div>
 </section>
+
+<!-- === SECTION: PENDAPAT PARA TOKOH HUKUM INDONESIA (v8b) === -->
+<section class="section tokoh-section" id="tokoh" style="background:#f4f6f8;padding:80px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Apresiasi & Refleksi Akademisi</div>
+        <h2>Pendapat Para Tokoh<br>Hukum Indonesia.</h2>
+      </div>
+      <p>Pandangan objektif, dukungan keilmuan, dan refleksi dari para guru besar serta tokoh hukum nasional terhadap komitmen integritas, profesionalisme, dan penegakan hukum berkeadilan oleh PERADI NOBILITI.</p>
+    </div>
+
+    <div class="video-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;margin-top:35px;">
+      <!-- Video 1 -->
+      <article class="video-card">
+        <div class="video-frame-wrap">
+          <iframe src="https://www.youtube-nocookie.com/embed/piwD5fA82o0" title="Prof. Dr. Abdul Rachmad Budiono, SH., M.H. | Guru Besar Fakultas Hukum Universitas Brawijaya" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body">
+          <span class="video-speaker-tag">Guru Besar & Tokoh Akademisi</span>
+          <h3>Prof. Dr. Abdul Rachmad Budiono, S.H., M.H.</h3>
+          <p class="video-speaker-role">Guru Besar Fakultas Hukum Universitas Brawijaya</p>
+          <p>Pandangan dan refleksi ilmiah mengenai pentingnya integritas, kemandirian advokat, serta penegakan etika moral profesi hukum (officium nobile) bersama PERADI NOBILITI.</p>
+          <div style="margin-top:12px;">
+            <a href="https://www.youtube.com/watch?v=piwD5fA82o0" target="_blank" rel="noopener noreferrer" class="btn outline" style="font-size:12px;padding:8px 16px;min-height:auto;">Tonton di YouTube ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Video 2 -->
+      <article class="video-card">
+        <div class="video-frame-wrap">
+          <iframe src="https://www.youtube-nocookie.com/embed/G5hAcFQ5kEo" title="Aspirasi & Pesan Tokoh Hukum — PERADI NOBILITI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video-card-body">
+          <span class="video-speaker-tag">Aspirasi Penegakan Hukum</span>
+          <h3>PERADI NOBILITI: Menjaga Kehormatan Profesi</h3>
+          <p class="video-speaker-role">Pesan & Pandangan Tokoh Penegak Hukum</p>
+          <p>Aspirasi dan komitmen kebersamaan para advokat dalam memperjuangkan akses keadilan bagi seluruh lapisan masyarakat serta perlindungan hak asasi manusia.</p>
+          <div style="margin-top:12px;">
+            <a href="https://www.youtube.com/shorts/G5hAcFQ5kEo" target="_blank" rel="noopener noreferrer" class="btn outline" style="font-size:12px;padding:8px 16px;min-height:auto;">Tonton di YouTube ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section public-services" id="layanan"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Layanan publik</div><h2>Keadilan dimulai<br>dari akses yang terbuka.</h2></div><p>Temukan jalur layanan yang sesuai dengan kebutuhan Anda. Kenali tujuan, persiapan, dan langkah awalnya.</p></div><div class="service-shell"><div class="service-tabs" role="tablist" aria-label="Jenis layanan"><button class="service-tab" id="tab-bantuan" role="tab" aria-selected="true" aria-controls="service-panel" data-tab="bantuan"><svg class="icon"><use href="#scales"/></svg>Bantuan Hukum<svg class="icon arrow"><use href="#arrow"/></svg></button><button class="service-tab" id="tab-etik" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-tab="etik"><svg class="icon"><use href="#shield"/></svg>Pengaduan Etik<svg class="icon arrow"><use href="#arrow"/></svg></button><button class="service-tab" id="tab-verifikasi" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-tab="verifikasi"><svg class="icon"><use href="#people"/></svg>Verifikasi Advokat<svg class="icon arrow"><use href="#arrow"/></svg></button><button class="service-tab" id="tab-perlindungan" role="tab" aria-selected="false" aria-controls="service-panel" tabindex="-1" data-tab="perlindungan"><svg class="icon"><use href="#building"/></svg>Perlindungan Profesi<svg class="icon arrow"><use href="#arrow"/></svg></button></div><div><div class="service-panel" id="service-panel" role="tabpanel" aria-labelledby="tab-bantuan" tabindex="0"><div><h3 id="service-title">Bantuan hukum<br>cuma-cuma.</h3><p id="service-description">Untuk masyarakat yang tidak mampu dan kelompok rentan yang membutuhkan pendampingan dalam menghadapi masalah hukum.</p><button class="btn primary" id="service-action">Lihat alur permohonan <svg class="icon arrow"><use href="#arrow"/></svg></button></div><div class="service-info"><span id="service-info-label">Langkah awal Anda</span><ol id="service-steps"><p style="margin:6px 0;">• Kenali jenis masalah hukum yang dihadapi.</p><p style="margin:6px 0;">• Siapkan ringkasan kejadian dan dokumen pendukung.</p><p style="margin:6px 0;">• Hubungi sekretariat untuk informasi penerimaan layanan.</p></ol></div></div><p class="service-foot"><svg class="icon"><use href="#shield"/></svg> Informasi awal layanan. Ketersediaan dan prosedur mengikuti ketentuan resmi organisasi.</p></div></div></div></section>
 <section class="section" id="berita">
   <div class="wrap">
@@ -962,10 +1022,10 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
         <a href="https://www.facebook.com/profile.php?id=61595977707753" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook PERADI NOBILITI" title="Facebook Official"><svg><use href="#icon-facebook"/></svg></a>
         <a href="https://www.tiktok.com/@peradinobiliti?lang=en" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok PERADI NOBILITI" title="TikTok @peradinobiliti"><svg><use href="#icon-tiktok"/></svg></a>
         <a href="mailto:peradinobiliti1@gmail.com" class="social-btn" aria-label="Email Resmi PERADI NOBILITI" title="Email: peradinobiliti1@gmail.com"><svg><use href="#icon-mail"/></svg></a>
-      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v7.2.3b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
+      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v8b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
 <a href="#main" class="back-top" aria-label="Kembali ke atas"><svg class="icon"><use href="#arrow"/></svg></a>
 
-<!-- Floating WhatsApp Button & Popover (v7.2.3b) -->
+<!-- Floating WhatsApp Button & Popover (v8b) -->
 <div class="wa-floating-container" id="wa-floating-container">
   <div class="wa-floating-menu" id="wa-floating-menu" aria-hidden="true">
     <div class="wa-menu-header">
@@ -1008,7 +1068,7 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
 
 <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="dialog-close" aria-label="Tutup dialog"><svg class="icon"><use href="#plus"/></svg></button></div><div class="dialog-body" id="dialog-body"></div></dialog>
 <script>
-// Deklarasi helper global & WA Floating Handler paling awal (v7.2.3b)
+// Deklarasi helper global & WA Floating Handler paling awal (v8b)
 const $ = s => {
   if (!s || typeof s !== 'string' || !s.trim()) return null;
   try { return document.querySelector(s); } catch(e) { return null; }
@@ -1320,6 +1380,9 @@ const content = {
     <p><strong>Proses Hukum Legalitas Organisasi:</strong> Pertemuan dan penelaahan akhir dokumen Akta Pendirian No. 8 di hadapan Notaris Ny. Rose Takarina, S.H.</p>
     <p>Dokumen ini menjadi dasar terbitnya SK Pengesahan Badan Hukum Menteri Hukum Republik Indonesia No. AHU-0007744.AH.01.07.TAHUN 2026 tanggal 8 Oktober 2026.</p>
   `],
+  galeri_foto_5: ['Dr. Supriarno, S.H., M.H. — Ketua Umum DPN', '<p>Potret resmi peradilan Ketua Umum DPN PERADI NOBILITI, Dr. Supriarno, S.H., M.H., mengenakan toga advokat resmi dalam peneguhan integritas kepengurusan organisasi.</p>'],
+  galeri_foto_6: ['Mohammad Trijanto, S.H., M.M., M.H. — Sekretaris Jendral DPN', '<p>Potret resmi peradilan Sekretaris Jendral DPN PERADI NOBILITI, Mohammad Trijanto, S.H., M.M., M.H., mengenakan toga advokat resmi di ruang peradilan.</p>'],
+  galeri_foto_7: ['Haryono, S.H., M.H. — Bendahara Umum DPN', '<p>Potret resmi peradilan Bendahara Umum DPN PERADI NOBILITI, Haryono, S.H., M.H., mengenakan toga advokat resmi di ruang peradilan.</p>'],
   galeri_foto_4: ['Diskusi Meja Bundar Strategi & Program Organisasi', `
     <img src="images/diskusi-pengurus-meja-bundar.jpeg" style="width:100%;max-height:420px;object-fit:cover;border-radius:6px;margin-bottom:16px" alt="Diskusi Meja Bundar">
     <p><strong>Konsolidasi Kepengurusan:</strong> Diskusi mendalam pimpinan DPN merumuskan tata kelola organisasi, kurikulum PKPA terpadu, dan pendirian Posko Bantuan Hukum LBH Nobiliti.</p>
