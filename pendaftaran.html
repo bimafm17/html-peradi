@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Konsep penyempurnaan desain PERADI NOBILITI. Integritas, independensi, dan akses keadilan.">
-<title>Pendaftaran Advokat Baru & Pindahan — PERADI NOBILITI (v8.2b)</title>
+<title>Pendaftaran Advokat Baru & Pindahan — PERADI NOBILITI (v8.2.1b)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -743,7 +743,20 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
 }
 
 
-/* === MANIFESTO & TESTIMONIAL STYLING (v8.2b) === */
+/* === VIDEO & TESTIMONIAL STYLING (v8.2.1b) === */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:32px;margin:30px 0 50px}
+.video-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 20px rgba(0,0,0,0.05)}
+.video-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,25,50,.12);border-color:var(--gold)}
+.video-frame-wrap{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
+.video-frame-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.video-card-body{padding:26px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.video-badge{display:inline-block;align-self:flex-start;font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;background:rgba(198,166,104,0.12);padding:4px 10px;border-radius:4px;margin-bottom:4px}
+.video-title{font-size:19px;color:var(--navy);margin:0;line-height:1.4;font-family:var(--serif);font-weight:700}
+.video-desc{font-size:14px;color:var(--ink);line-height:1.65;margin:0 0 12px}
+.video-btn-link{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-weight:700;font-size:13.5px;text-decoration:none;margin-top:auto}
+.video-btn-link:hover{color:var(--gold);text-decoration:underline}
+
+/* === MANIFESTO & TESTIMONIAL STYLING === */
 .manifesto-lead-box{background:linear-gradient(135deg,var(--deep) 0%,var(--navy) 100%);color:#fff;padding:45px 35px;border-radius:10px;border:1px solid rgba(198,166,104,0.3);box-shadow:0 12px 36px rgba(11,25,50,0.15);margin:35px 0 45px}
 .manifesto-quote-banner{border-left:4px solid var(--gold);padding:18px 24px;background:rgba(198,166,104,0.08);border-radius:0 8px 8px 0;margin:25px 0;font:italic 18px/1.7 var(--serif);color:var(--deep)}
 .manifesto-table-wrap{overflow-x:auto;margin:25px 0 35px;border-radius:8px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,0.04)}
@@ -770,6 +783,10 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
 .opinion-role{font-size:12px;color:var(--muted)}
 .opinion-quote{font-size:14px;line-height:1.7;color:var(--ink);font-style:italic}
 .opinion-tag{align-self:flex-start;font-size:11px;font-weight:700;padding:4px 10px;border-radius:15px;background:var(--paper);color:var(--navy);margin-top:16px}
+
+@media(max-width:768px){
+  .video-grid{grid-template-columns:1fr}
+}
 
 </style>
 </head>
@@ -1066,9 +1083,9 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
         <a href="https://www.facebook.com/profile.php?id=61595977707753" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook PERADI NOBILITI" title="Facebook Official"><svg><use href="#icon-facebook"/></svg></a>
         <a href="https://www.tiktok.com/@peradinobiliti?lang=en" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok PERADI NOBILITI" title="TikTok @peradinobiliti"><svg><use href="#icon-tiktok"/></svg></a>
         <a href="mailto:peradinobiliti1@gmail.com" class="social-btn" aria-label="Email Resmi PERADI NOBILITI" title="Email: peradinobiliti1@gmail.com"><svg><use href="#icon-mail"/></svg></a>
-      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v8.2b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
+      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v8.2.1b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
 <a href="#main" class="back-top" aria-label="Kembali ke atas"><svg class="icon"><use href="#arrow"/></svg></a>
-<!-- Floating WhatsApp Button & Popover (v8.1b) -->
+<!-- Floating WhatsApp Button & Popover (v8.2.1b) -->
 <div class="wa-floating-container" id="wa-floating-container">
   <div class="wa-floating-menu" id="wa-floating-menu" aria-hidden="true">
     <div class="wa-menu-header">
@@ -1101,6 +1118,14 @@ dialog{border:0;padding:0;width:min(620px,calc(100% - 32px));max-height:85vh;col
         <span>Senin – Jumat: 09.00 – 16.00 WIB</span>
       </div>
     </div>
+  </div>
+
+  <button type="button" class="wa-floating-btn" id="wa-floating-toggle" onclick="toggleWaMenu(event)" aria-expanded="false" aria-label="Konsultasi WhatsApp">
+    <svg class="wa-fab-icon"><use href="#icon-whatsapp"/></svg>
+    <span class="wa-fab-tooltip">Chat WhatsApp</span>
+  </button>
+</div>
+
 <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="dialog-close" aria-label="Tutup dialog"><svg class="icon"><use href="#plus"/></svg></button></div><div class="dialog-body" id="dialog-body"></div></dialog>
 <script>
 // Deklarasi helper global & WA Floating Handler paling awal (v8.1b)
@@ -1417,11 +1442,6 @@ const content = {
   `],
   galeri_foto_5: ['Delegasi Pimpinan DPN Bersama Berkas Resmi Organisasi', '<p>Jajaran inisiator dan pimpinan DPN PERADI NOBILITI menunjukkan dokumen resmi pengesahan dan arah strategis perkumpulan dalam pertemuan konsolidasi nasional di Jakarta.</p>'],
   galeri_foto_6: ['Penelaahan Dokumen Hukum & Kerja Sama Strategis', '<p>Sesi telaah intensif berkas legalitas, draf anggaran dasar, dan program kerja sama kelembagaan oleh pimpinan DPN PERADI NOBILITI.</p>'],
-  
-  galeri_foto_8: ['Silaturahmi dan Pertemuan Koordinasi PERADI NOBILITI', '<img src="images/silaturahmi-koordinasi-pengurus.jpeg" alt="Silaturahmi Pengurus" style="width:100%;border-radius:6px;margin-bottom:15px;"><p>Foto bersama jajaran pengurus dan advokat PERADI NOBILITI dalam agenda silaturahmi serta diskusi non-formal. Pertemuan ini diikuti oleh 7 advokat lintas generasi yang mencerminkan soliditas, kekompakan, dan kehangatan internal organisasi.</p>'],
-  galeri_foto_9: ['Penyerahan & Tinjauan Berkas Resmi AD/ART Organisasi', '<img src="images/penyerahan-dokumen-adart.jpeg" alt="Penyerahan Berkas AD/ART" style="width:100%;border-radius:6px;margin-bottom:15px;"><p>Sekretaris Jenderal Mohammad Trijanto, S.H., M.M., M.H. bersama rekan pimpinan menunjukkan berkas resmi Anggaran Dasar & Anggaran Rumah Tangga (AD/ART) perkumpulan PERADI NOBILITI di ruang sekretariat dengan simbol wayang integritas.</p>'],
-  galeri_foto_10: ['Soliditas Salam Komando Jajaran Pengurus & Advokat Muda', '<img src="images/soliditas-salam-komando-pengurus.jpeg" alt="Salam Komando Pengurus" style="width:100%;border-radius:6px;margin-bottom:15px;"><p>Momen kebersamaan jajaran pengurus dan advokat muda PERADI NOBILITI dengan gestur salam komando di koridor gedung lembaga hukum, menyiratkan integritas, keteguhan etika profesi, dan komitmen pelayanan hukum bagi masyarakat.</p>'],
-
   galeri_foto_7: ['Kebersamaan Delegasi Pengurus DPN PERADI NOBILITI', '<p>Momen soliditas dan komitmen bersama para pendiri dan pengurus DPN PERADI NOBILITI dalam memajukan integritas dan kehormatan profesi advokat.</p>'],
   galeri_foto_4: ['Diskusi Meja Bundar Strategi & Program Organisasi', `
     <img src="images/diskusi-pengurus-meja-bundar.jpeg" style="width:100%;max-height:420px;object-fit:cover;border-radius:6px;margin-bottom:16px" alt="Diskusi Meja Bundar">
