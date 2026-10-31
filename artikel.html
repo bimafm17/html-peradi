@@ -1056,6 +1056,170 @@ h2 {
   }
 }
 
+
+/* === ARTICLE CARDS & DETAIL VIEW (v10.1b) === */
+.article-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 35px;
+  margin-top: 30px;
+}
+.article-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(11,25,50,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  cursor: pointer;
+}
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(11,25,50,0.12);
+  border-color: var(--gold);
+}
+.article-card-thumb-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  background: var(--navy);
+}
+.article-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+  display: block;
+}
+.article-card:hover .article-card-thumb {
+  transform: scale(1.06);
+}
+.article-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.article-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.article-card-badge {
+  background: rgba(198,166,104,0.18);
+  color: var(--navy);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.article-card-date {
+  font-size: 13px;
+  color: var(--muted);
+}
+.article-card-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--navy);
+  margin: 0 0 14px 0;
+  transition: color .2s ease;
+}
+.article-card:hover .article-card-title {
+  color: var(--blue);
+}
+.article-card-excerpt {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 24px;
+  flex: 1;
+}
+.article-card-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.btn-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  text-decoration: none;
+  transition: all .2s ease;
+}
+.btn-read-more:hover {
+  color: var(--gold);
+  gap: 12px;
+}
+
+/* FULL ARTICLE VIEW */
+.article-full-view {
+  display: none;
+  animation: fadeIn .3s ease;
+}
+.article-full-view.active {
+  display: block;
+}
+.article-back-bar {
+  margin-bottom: 28px;
+}
+.btn-back-articles {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+.btn-back-articles:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.article-featured-hero {
+  width: 100%;
+  max-height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 25px 0 12px 0;
+  box-shadow: 0 12px 35px rgba(11,25,50,0.12);
+  border: 1px solid var(--line);
+  background: var(--navy);
+}
+.article-featured-hero img {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+.article-caption {
+  font-size: 13.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 30px;
+  text-align: center;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 </head>
 <body>
@@ -1098,131 +1262,96 @@ h2 {
 <main id="main">
 <section class="page-header" style="background:linear-gradient(135deg,var(--deep) 0%,var(--navy) 100%);padding:55px 0 40px;border-bottom:1px solid rgba(198,166,104,0.25);">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--gold);margin-bottom:12px;">Khazanah Pemikiran</div>
-    <h1 style="color:#fff;font:40px/1.2 var(--serif);margin-bottom:18px;">Artikel & Kajian Filsafat Hukum</h1>
-    <p style="color:#c4d2e1;max-width:780px;font-size:16px;line-height:1.7;margin:0;">Kumpulan tulisan mendalam, telaah kritis, dan rilis pemikiran resmi pimpinan DPN PERADI NOBILITI seputar filsafat keadilan dan masa depan advokat Indonesia.</p>
+    <div class="eyebrow" style="color:var(--gold);margin-bottom:12px;">Khazanah Pemikiran &amp; Publikasi</div>
+    <h1 style="color:#fff;font:40px/1.2 var(--serif);margin-bottom:18px;">Artikel &amp; Kajian Filsafat Hukum</h1>
+    <p style="color:#c4d2e1;max-width:820px;font-size:17px;line-height:1.65;margin:0;">
+      Kumpulan artikel ilmiah populer, refleksi etika, dan gagasan keadilan substantif yang diterbitkan secara resmi oleh Dewan Pengurus Nasional PERADI NOBILITI.
+    </p>
   </div>
 </section>
 
-<section class="section" style="padding:60px 0;background:#fff;">
-  <div class="wrap" style="max-width:980px;">
+<section class="section" style="padding:60px 0 90px;background:#fbfcfd;">
+  <div class="wrap">
 
-    <!-- TAB JUMP BUTTONS -->
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:45px;border-bottom:1px solid var(--line);padding-bottom:18px;">
-      <a href="#artikel-1" class="btn outline" style="font-size:13px;padding:8px 18px;text-decoration:none;">Artikel 1: Filosofi Keadilan Bukan Sekadar Menang ➔</a>
-      <a href="#artikel-2" class="btn outline" style="font-size:13px;padding:8px 18px;text-decoration:none;">Artikel 2: Filsafat Hukum Fondasi Advokat Berintegritas ➔</a>
-    </div>
-
-    <!-- ==================== ARTIKEL 1 ==================== -->
-    <article id="artikel-1" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;margin-bottom:60px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
-        <span style="background:rgba(198,166,104,0.15);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">RILIS PERS RESMI</span>
-        <span style="font-size:13px;color:var(--muted);">Jumat, 30 Oktober 2026</span>
-        <span style="font-size:13px;color:var(--muted);">•</span>
-        <span style="font-size:13px;color:var(--muted);">Sumber: DPN PERADI NOBILITI (Jakarta)</span>
+    <!-- VIEW 1: ARTICLE CARDS GRID -->
+    <div id="article-list-view">
+      <div class="section-head" style="margin-bottom:25px;">
+        <div>
+          <div class="eyebrow">Daftar Publikasi Terbaru</div>
+          <h2>Artikel &amp; Warta Pemikiran</h2>
+        </div>
+        <p>Pilih artikel di bawah ini untuk membaca ulasan mendalam, landasan pemikiran filosofis, dan komitmen penegakan etika profesi advokat.</p>
       </div>
 
-      <h2 style="font:700 32px/1.3 var(--serif);color:var(--navy);margin:0 0 24px;">
-        Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan
-      </h2>
-
-      <!-- KEY POINTS BOX -->
-      <div style="background:#f4f6f8;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:24px 28px;margin-bottom:30px;">
-        <h3 style="font:700 16px var(--sans);color:var(--navy);margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">Poin Penting:</h3>
-        <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--ink);">• <strong>Peradi Nobiliti resmi diluncurkan</strong> di Jakarta pada 29 Oktober 2026 dengan mengusung filsafat hukum sebagai fondasi organisasi advokat.</p>
-        <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--ink);">• Organisasi ini menyiapkan <strong>bantuan hukum cuma-cuma</strong> bagi buruh, korban KDRT, pekerja migran, dan masyarakat yang membutuhkan pendampingan hukum.</p>
-        <p style="margin:0;font-size:15px;line-height:1.6;color:var(--ink);">• Peradi Nobiliti akan membentuk <strong>Dewan Kehormatan independen</strong>, Pusat Kajian Filsafat Hukum, serta menerapkan pendidikan hukum berkelanjutan dan <strong>pedoman etik kecerdasan artifisial</strong>.</p>
-      </div>
-
-      <!-- BODY CONTENT -->
-      <div style="font-size:16px;line-height:1.85;color:#2c3a4e;">
-        <p>
-          <strong>JAKARTA</strong> — Menang di pengadilan tidak selalu berarti keadilan telah ditegakkan. Filosofi inilah yang menjadi pijakan Perhimpunan Advokat Indonesia Nobiliti (Peradi Nobiliti), organisasi advokat yang resmi diluncurkan di Jalan Johar Baru Jakarta Pusat pada 29 Oktober 2026. Tidak sekadar mengejar kemenangan dalam perkara hukum, organisasi advokat Indonesia ini ingin menempatkan filsafat hukum, etika profesi, dan perlindungan hak masyarakat sebagai fondasi kerja advokat.
-        </p>
-
-        <p>
-          Peradi Nobiliti berkomitmen membuka pintu keadilan seluas-luasnya. Sekretaris Jenderal Peradi Nobiliti <strong>Mohammad Trijanto, S.H., M.M., M.H.</strong> mengatakan, bagi buruh yang kehilangan pekerjaan tanpa pesangon, ibu korban kekerasan dalam rumah tangga, pekerja migran yang terjerat hukum, dan lain sebagainya, keadilan bukan wacana, tapi kebutuhan.
-        </p>
-
-        <p>
-          Merupakan perkumpulan advokat berbadan hukum yang bersifat nirlaba, Peradi Nobiliti melalui lembaga bantuan hukum memberikan layanan cuma-cuma (bantuan hukum gratis) secara terukur dan akuntabel. <em>“Yang itu sejalan dengan Tujuan Pembangunan Berkelanjutan ke-16 tentang perdamaian, keadilan, dan kelembagaan yang tangguh,”</em> kata Trijanto Jumat (30/10/2026).
-        </p>
-
-        <p>
-          Peradi Nobiliti berdiri 21 September 2026 di saat berlakunya KUHP dan KUHAP baru yang mengedepankan keadilan restoratif sekaligus menempatkan advokat sebagai bagian integral peradilan pidana, termasuk dalam mendampingi saksi dan mengajukan keberatan atas intimidasi selama pemeriksaan.
-        </p>
-
-        <p>
-          Pada saat yang sama Mahkamah Konstitusi telah mencatat masih banyaknya organisasi advokat belum diiringi standar yang sama dalam rekrutmen, pendidikan, pengangkatan, dan penegakan kode etik. Sementara ungkapan hukum “tajam ke bawah, tumpul ke atas” masih terdengar hingar.
-        </p>
-
-        <p>
-          Sebagian besar warga masih melihat hukum terasa rumit, mahal, dan berjarak. Di sinilah Peradi Nobiliti menyampaikan gugatan moralnya. <em>“Bahwa hukum yang dijalankan tanpa filsafat akan kehilangan arah, dan advokat yang bekerja tanpa arah mudah tergelincir menjadi sekadar pemburu kemenangan,”</em> tegas Trijanto.
-        </p>
-
-        <blockquote style="background:#f9fbfd;border-left:4px solid var(--navy);padding:20px 25px;margin:28px 0;font-style:italic;color:var(--navy);font-size:17px;line-height:1.7;">
-          “Filsafat hukum adalah kompas bagi seorang advokat. Tanpa filsafat, pasal hanya menjadi alat untuk menang. Dengan filsafat, pasal menjadi jalan menuju keadilan.”
-          <footer style="margin-top:10px;font-size:14px;color:var(--muted);font-style:normal;font-weight:600;">— Dr. Supriarno, S.H., M.H., Ketua Umum PERADI NOBILITI</footer>
-        </blockquote>
-
-        <p>
-          <strong>Dr. Supriarno, S.H., M.H.</strong>, Ketua Umum Peradi Nobiliti mengatakan filsafat hukum menjadi jantung organisasi (Peradi Nobiliti) dan itu bukan sekadar slogan. Anggaran dasar Peradi Nobiliti mewajibkan peningkatan kapasitas filsafat hukum agar setiap anggota mampu memahami, mengkaji secara kritis, menafsirkan, dan mengembangkan hukum.
-        </p>
-
-        <p>
-          <em>“Tidak semata-mata sebagai norma tertulis, melainkan sebagai instrumen keadilan, kemanusiaan, ketertiban, kemanfaatan, dan perlindungan hak asasi manusia,”</em> papar Supriarno.
-        </p>
-
-        <p>
-          Setiap anggota juga wajib mengikuti pendidikan hukum berkelanjutan sebagai pembelajaran sepanjang hayat. Peradi Nobiliti akan membentuk Dewan Kehormatan yang independen, mendirikan Pusat Kajian Filsafat Hukum, menyelenggarakan pelatihan KUHAP bagi advokat, menyiapkan lembaga bantuan hukum menuju akreditasi berdasarkan Undang-Undang Nomor 16 Tahun 2011 tentang Bantuan Hukum, dan menyusun pedoman etik penggunaan kecerdasan artifisial.
-        </p>
-
-        <p>
-          Organisasi ini juga akan menyampaikan masukan konstruktif atas RUU Advokat yang menjunjung independensi profesi, standar nasional, dan akuntabilitas, dengan berpijak pada Prinsip-Prinsip Dasar PBB tentang Peran Advokat (UN Basic Principles on the Role of Lawyers, 1990).
-        </p>
-
-        <p>
-          Dalam anggaran dasarnya tegas menyatakan Peradi Nobiliti dilarang berpolitik praktis atau menjadi bagian dari partai politik mana pun. Organisasi yang berdiri sendiri dan menghormati seluruh organisasi advokat di Indonesia sebagai mitra dalam menjaga marwah profesi.
-        </p>
-
-        <p>
-          <em>“Kami tidak hadir untuk menambah daftar organisasi advokat. Kami hadir untuk membuktikan bahwa organisasi advokat dapat dipercaya: etiknya ditegakkan, ujiannya jujur, keuangannya terbuka, dan bantuan hukumnya benar-benar sampai kepada rakyat kecil,”</em> pungkas Supriarno.
-        </p>
-
-        <p>
-          <strong>Prof. Hikmahanto Juwana, S.H., LL.M., Ph.D.</strong>, Guru Besar Hukum Internasional Universitas Indonesia menyampaikan dukungan atas hadirnya Peradi Nobiliti. Dukungan serupa juga diungkapkan <strong>Prof. Dr. Abdul Rachmad Budiono, S.H., M.H.</strong>, Guru Besar Universitas Brawijaya yang sekaligus Ketua Pengawas Peradi Nobiliti bersama <strong>Dr. Hari Purwanto, S.H., M.H.</strong> sebagai Anggota Pengawas.
-        </p>
-
-        <p>
-          <em>“Selamat atas terbentuknya Peradi Nobiliti. Semoga bisa menambah khazanah penegakan hukum di Indonesia,”</em> kata Prof. Budiono.
-        </p>
-
-        <!-- KOTAK TIGA KEBIASAAN LAMA -->
-        <div style="background:linear-gradient(145deg,#0b1932,#102447);color:#fff;border-radius:10px;padding:32px;margin:35px 0;">
-          <h3 style="color:var(--gold);font:700 20px var(--serif);margin:0 0 18px;">
-            Tiga Kebiasaan Lama Advokat yang Perlu Ditinggalkan
-          </h3>
-          <div style="display:grid;grid-template-columns:1fr;gap:18px;">
-            <div style="background:rgba(255,255,255,0.06);padding:18px 22px;border-radius:6px;border:1px solid rgba(198,166,104,0.2);">
-              <strong style="color:var(--gold);display:block;margin-bottom:6px;font-size:16px;">1. Membaca hukum sebatas teks.</strong>
-              <p style="margin:0;font-size:14px;color:#d8e3ef;line-height:1.6;">Pasal dihafal, tetapi tujuannya dilupakan. Mukadimah Anggaran Dasar Peradi Nobiliti menegaskan bahwa hukum adalah sarana untuk menyeimbangkan kepastian hukum, kemanfaatan, keadilan, perlindungan hak asasi manusia, dan kesejahteraan masyarakat.</p>
+      <div class="article-cards-grid">
+        <!-- Card 1: Image 1 (Fondasi Advokat Berintegritas) -->
+        <article class="article-card" data-article-target="artikel-fondasi">
+          <div class="article-card-thumb-wrap">
+            <img src="images/artikel-fondasi-advokat-berintegritas.jpg" alt="PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas" class="article-card-thumb" loading="lazy">
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-badge">LIPUTAN KHUSUS &amp; KHAZANAH</span>
+              <span class="article-card-date">30 Oktober 2026</span>
             </div>
-            <div style="background:rgba(255,255,255,0.06);padding:18px 22px;border-radius:6px;border:1px solid rgba(198,166,104,0.2);">
-              <strong style="color:var(--gold);display:block;margin-bottom:6px;font-size:16px;">2. Mengukur keberhasilan dari kemenangan semata.</strong>
-              <p style="margin:0;font-size:14px;color:#d8e3ef;line-height:1.6;">Menang di ruang sidang tidak selalu berarti adil. Karena itu, organisasi ini berpegang pada lima belas prinsip officium nobile, antara lain loyalitas berkeadilan kepada klien, antikonflik kepentingan, serta fair trial dan equality of arms.</p>
-            </div>
-            <div style="background:rgba(255,255,255,0.06);padding:18px 22px;border-radius:6px;border:1px solid rgba(198,166,104,0.2);">
-              <strong style="color:var(--gold);display:block;margin-bottom:6px;font-size:16px;">3. Menilai organisasi dari jumlah, bukan mutu.</strong>
-              <p style="margin:0;font-size:14px;color:#d8e3ef;line-height:1.6;">Peradi Nobiliti menjawab catatan Mahkamah Konstitusi dengan Dewan Kehormatan yang independen, pendidikan hukum berkelanjutan yang wajib, dan tata kelola keuangan yang terbuka.</p>
+            <h3 class="article-card-title">PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas</h3>
+            <p class="article-card-excerpt">
+              Peluncuran Perhimpunan Advokat Indonesia Nobiliti menandai babak baru organisasi advokat Indonesia yang menempatkan filsafat hukum dan moralitas keadilan di atas sekadar kemenangan prosedural persidangan.
+            </p>
+            <div class="article-card-footer">
+              <a href="#artikel-fondasi" class="btn-read-more" data-article-target="artikel-fondasi">Baca Selengkapnya <span>➔</span></a>
             </div>
           </div>
+        </article>
+
+        <!-- Card 2: Image 2 (Usung Filosofi Keadilan) -->
+        <article class="article-card" data-article-target="artikel-filosofi">
+          <div class="article-card-thumb-wrap">
+            <img src="images/artikel-usung-filosofi-keadilan.jpg" alt="Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan" class="article-card-thumb" loading="lazy">
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-badge">SIARAN PERS RESMI</span>
+              <span class="article-card-date">30 Oktober 2026</span>
+            </div>
+            <h3 class="article-card-title">Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan</h3>
+            <p class="article-card-excerpt">
+              Peradi Nobiliti resmi berdiri di Jakarta pada 29 Oktober 2026 dengan mengusung filsafat hukum sebagai fondasi organisasi advokat. Menyiapkan bantuan hukum cuma-cuma bagi masyarakat serta menegakkan integritas officium nobile.
+            </p>
+            <div class="article-card-footer">
+              <a href="#artikel-filosofi" class="btn-read-more" data-article-target="artikel-filosofi">Baca Selengkapnya <span>➔</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- VIEW 2: ARTICLE 1 FULL DETAIL (Fondasi Advokat Berintegritas - Featured Image 1) -->
+    <article id="artikel-fondasi" class="article-full-view">
+      <div class="article-back-bar">
+        <button type="button" class="btn-back-articles">��� Kembali ke Daftar Artikel</button>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+          <span style="background:rgba(16,36,71,0.08);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">LIPUTAN KHUSUS &amp; KHAZANAH</span>
+          <span style="color:var(--muted);font-size:13px;">30 Oktober 2026</span>
+          <span style="background:rgba(198,166,104,0.2);color:var(--navy);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;">SK Menkumham RI No. AHU-0007744.AH.01.07.TAHUN 2026</span>
+        </div>
+        <h1 style="font:34px/1.3 var(--serif);color:var(--navy);margin:0 0 16px;">PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas</h1>
+        <div style="font-size:14px;color:var(--muted);margin-bottom:20px;">
+          Dipublikasikan oleh <strong>Sekretariat DPN PERADI NOBILITI</strong> · Waktu baca ± 5 menit
         </div>
 
-      </div>
-    </article>
+        <!-- Featured Image 1 -->
+        <div class="article-featured-hero">
+          <img src="images/artikel-fondasi-advokat-berintegritas.jpg" alt="PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas">
+        </div>
+        <div class="article-caption">Featured Image: Sesi Pengukuhan dan Penelaahan Prinsip-Prinsip Officium Nobile Dewan Pengurus Nasional PERADI NOBILITI di Jakarta.</div>
 
-    <!-- ==================== ARTIKEL 2 ==================== -->
-    <article id="artikel-2" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
+        <!-- Content Body -->
+        <div class="article-content-inner">
+
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
         <span style="background:rgba(16,36,71,0.08);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">LIPUTAN KHUSUS</span>
         <span style="font-size:13px;color:var(--muted);">Kamis, 29 Oktober 2026</span>
@@ -1330,6 +1459,154 @@ h2 {
         <p>
           Dengan mengedepankan prinsip <strong>officium nobile</strong> atau profesi yang mulia, PERADI NOBILITI berharap dapat mengambil peran dalam membangun wajah penegakan hukum Indonesia yang lebih berintegritas, profesional, dan berorientasi pada keadilan kemanusiaan.
         </p>
+      </div>
+    
+        </div>
+
+        <div style="margin-top:45px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <button type="button" class="btn-back-articles">← Kembali ke Daftar Artikel</button>
+          <a href="#artikel-filosofi" class="btn-read-more" data-article-target="artikel-filosofi">Baca Artikel Selanjutnya: Usung Filosofi Keadilan ➔</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- VIEW 3: ARTICLE 2 FULL DETAIL (Usung Filosofi Keadilan - Featured Image 2) -->
+    <article id="artikel-filosofi" class="article-full-view">
+      <div class="article-back-bar">
+        <button type="button" class="btn-back-articles">← Kembali ke Daftar Artikel</button>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+          <span style="background:rgba(198,166,104,0.15);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">SIARAN PERS RESMI</span>
+          <span style="color:var(--muted);font-size:13px;">30 Oktober 2026</span>
+          <span style="color:var(--muted);font-size:13px;">• Jakarta</span>
+        </div>
+        <h1 style="font:34px/1.3 var(--serif);color:var(--navy);margin:0 0 16px;">Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan</h1>
+        <div style="font-size:14px;color:var(--muted);margin-bottom:20px;">
+          Oleh <strong>Humas Dewan Pengurus Nasional PERADI NOBILITI</strong> · Waktu baca ± 6 menit
+        </div>
+
+        <!-- Featured Image 2 -->
+        <div class="article-featured-hero">
+          <img src="images/artikel-usung-filosofi-keadilan.jpg" alt="Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan">
+        </div>
+        <div class="article-caption">Featured Image: Jajaran Pimpinan DPN PERADI NOBILITI dalam Rapat Pleno Peneguhan Nilai-Nilai Luhur Advokat Berintegritas.</div>
+
+        <!-- Content Body -->
+        <div class="article-content-inner">
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+        <span style="background:rgba(198,166,104,0.15);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">RILIS PERS RESMI</span>
+        <span style="font-size:13px;color:var(--muted);">Jumat, 30 Oktober 2026</span>
+        <span style="font-size:13px;color:var(--muted);">•</span>
+        <span style="font-size:13px;color:var(--muted);">Sumber: DPN PERADI NOBILITI (Jakarta)</span>
+      </div>
+
+      <h2 style="font:700 32px/1.3 var(--serif);color:var(--navy);margin:0 0 24px;">
+        Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan
+      </h2>
+
+      <!-- KEY POINTS BOX -->
+      <div style="background:#f4f6f8;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:24px 28px;margin-bottom:30px;">
+        <h3 style="font:700 16px var(--sans);color:var(--navy);margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">Poin Penting:</h3>
+        <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--ink);">• <strong>Peradi Nobiliti resmi diluncurkan</strong> di Jakarta pada 29 Oktober 2026 dengan mengusung filsafat hukum sebagai fondasi organisasi advokat.</p>
+        <p style="margin:0 0 8px;font-size:15px;line-height:1.6;color:var(--ink);">• Organisasi ini menyiapkan <strong>bantuan hukum cuma-cuma</strong> bagi buruh, korban KDRT, pekerja migran, dan masyarakat yang membutuhkan pendampingan hukum.</p>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:var(--ink);">• Peradi Nobiliti akan membentuk <strong>Dewan Kehormatan independen</strong>, Pusat Kajian Filsafat Hukum, serta menerapkan pendidikan hukum berkelanjutan dan <strong>pedoman etik kecerdasan artifisial</strong>.</p>
+      </div>
+
+      <!-- BODY CONTENT -->
+      <div style="font-size:16px;line-height:1.85;color:#2c3a4e;">
+        <p>
+          <strong>JAKARTA</strong> — Menang di pengadilan tidak selalu berarti keadilan telah ditegakkan. Filosofi inilah yang menjadi pijakan Perhimpunan Advokat Indonesia Nobiliti (Peradi Nobiliti), organisasi advokat yang resmi diluncurkan di Jalan Johar Baru Jakarta Pusat pada 29 Oktober 2026. Tidak sekadar mengejar kemenangan dalam perkara hukum, organisasi advokat Indonesia ini ingin menempatkan filsafat hukum, etika profesi, dan perlindungan hak masyarakat sebagai fondasi kerja advokat.
+        </p>
+
+        <p>
+          Peradi Nobiliti berkomitmen membuka pintu keadilan seluas-luasnya. Sekretaris Jenderal Peradi Nobiliti <strong>Mohammad Trijanto, S.H., M.M., M.H.</strong> mengatakan, bagi buruh yang kehilangan pekerjaan tanpa pesangon, ibu korban kekerasan dalam rumah tangga, pekerja migran yang terjerat hukum, dan lain sebagainya, keadilan bukan wacana, tapi kebutuhan.
+        </p>
+
+        <p>
+          Merupakan perkumpulan advokat berbadan hukum yang bersifat nirlaba, Peradi Nobiliti melalui lembaga bantuan hukum memberikan layanan cuma-cuma (bantuan hukum gratis) secara terukur dan akuntabel. <em>“Yang itu sejalan dengan Tujuan Pembangunan Berkelanjutan ke-16 tentang perdamaian, keadilan, dan kelembagaan yang tangguh,”</em> kata Trijanto Jumat (30/10/2026).
+        </p>
+
+        <p>
+          Peradi Nobiliti berdiri 21 September 2026 di saat berlakunya KUHP dan KUHAP baru yang mengedepankan keadilan restoratif sekaligus menempatkan advokat sebagai bagian integral peradilan pidana, termasuk dalam mendampingi saksi dan mengajukan keberatan atas intimidasi selama pemeriksaan.
+        </p>
+
+        <p>
+          Pada saat yang sama Mahkamah Konstitusi telah mencatat masih banyaknya organisasi advokat belum diiringi standar yang sama dalam rekrutmen, pendidikan, pengangkatan, dan penegakan kode etik. Sementara ungkapan hukum “tajam ke bawah, tumpul ke atas” masih terdengar hingar.
+        </p>
+
+        <p>
+          Sebagian besar warga masih melihat hukum terasa rumit, mahal, dan berjarak. Di sinilah Peradi Nobiliti menyampaikan gugatan moralnya. <em>“Bahwa hukum yang dijalankan tanpa filsafat akan kehilangan arah, dan advokat yang bekerja tanpa arah mudah tergelincir menjadi sekadar pemburu kemenangan,”</em> tegas Trijanto.
+        </p>
+
+        <blockquote style="background:#f9fbfd;border-left:4px solid var(--navy);padding:20px 25px;margin:28px 0;font-style:italic;color:var(--navy);font-size:17px;line-height:1.7;">
+          “Filsafat hukum adalah kompas bagi seorang advokat. Tanpa filsafat, pasal hanya menjadi alat untuk menang. Dengan filsafat, pasal menjadi jalan menuju keadilan.”
+          <footer style="margin-top:10px;font-size:14px;color:var(--muted);font-style:normal;font-weight:600;">— Dr. Supriarno, S.H., M.H., Ketua Umum PERADI NOBILITI</footer>
+        </blockquote>
+
+        <p>
+          <strong>Dr. Supriarno, S.H., M.H.</strong>, Ketua Umum Peradi Nobiliti mengatakan filsafat hukum menjadi jantung organisasi (Peradi Nobiliti) dan itu bukan sekadar slogan. Anggaran dasar Peradi Nobiliti mewajibkan peningkatan kapasitas filsafat hukum agar setiap anggota mampu memahami, mengkaji secara kritis, menafsirkan, dan mengembangkan hukum.
+        </p>
+
+        <p>
+          <em>“Tidak semata-mata sebagai norma tertulis, melainkan sebagai instrumen keadilan, kemanusiaan, ketertiban, kemanfaatan, dan perlindungan hak asasi manusia,”</em> papar Supriarno.
+        </p>
+
+        <p>
+          Setiap anggota juga wajib mengikuti pendidikan hukum berkelanjutan sebagai pembelajaran sepanjang hayat. Peradi Nobiliti akan membentuk Dewan Kehormatan yang independen, mendirikan Pusat Kajian Filsafat Hukum, menyelenggarakan pelatihan KUHAP bagi advokat, menyiapkan lembaga bantuan hukum menuju akreditasi berdasarkan Undang-Undang Nomor 16 Tahun 2011 tentang Bantuan Hukum, dan menyusun pedoman etik penggunaan kecerdasan artifisial.
+        </p>
+
+        <p>
+          Organisasi ini juga akan menyampaikan masukan konstruktif atas RUU Advokat yang menjunjung independensi profesi, standar nasional, dan akuntabilitas, dengan berpijak pada Prinsip-Prinsip Dasar PBB tentang Peran Advokat (UN Basic Principles on the Role of Lawyers, 1990).
+        </p>
+
+        <p>
+          Dalam anggaran dasarnya tegas menyatakan Peradi Nobiliti dilarang berpolitik praktis atau menjadi bagian dari partai politik mana pun. Organisasi yang berdiri sendiri dan menghormati seluruh organisasi advokat di Indonesia sebagai mitra dalam menjaga marwah profesi.
+        </p>
+
+        <p>
+          <em>“Kami tidak hadir untuk menambah daftar organisasi advokat. Kami hadir untuk membuktikan bahwa organisasi advokat dapat dipercaya: etiknya ditegakkan, ujiannya jujur, keuangannya terbuka, dan bantuan hukumnya benar-benar sampai kepada rakyat kecil,”</em> pungkas Supriarno.
+        </p>
+
+        <p>
+          <strong>Prof. Hikmahanto Juwana, S.H., LL.M., Ph.D.</strong>, Guru Besar Hukum Internasional Universitas Indonesia menyampaikan dukungan atas hadirnya Peradi Nobiliti. Dukungan serupa juga diungkapkan <strong>Prof. Dr. Abdul Rachmad Budiono, S.H., M.H.</strong>, Guru Besar Universitas Brawijaya yang sekaligus Ketua Pengawas Peradi Nobiliti bersama <strong>Dr. Hari Purwanto, S.H., M.H.</strong> sebagai Anggota Pengawas.
+        </p>
+
+        <p>
+          <em>“Selamat atas terbentuknya Peradi Nobiliti. Semoga bisa menambah khazanah penegakan hukum di Indonesia,”</em> kata Prof. Budiono.
+        </p>
+
+        <!-- KOTAK TIGA KEBIASAAN LAMA -->
+        <div style="background:linear-gradient(145deg,#0b1932,#102447);color:#fff;border-radius:10px;padding:32px;margin:35px 0;">
+          <h3 style="color:var(--gold);font:700 20px var(--serif);margin:0 0 18px;">
+            Tiga Kebiasaan Lama Advokat yang Perlu Ditinggalkan
+          </h3>
+          <div style="display:grid;grid-template-columns:1fr;gap:18px;">
+            <div style="background:rgba(255,255,255,0.06);padding:18px 22px;border-radius:6px;border:1px solid rgba(198,166,104,0.2);">
+              <strong style="color:var(--gold);display:block;margin-bottom:6px;font-size:16px;">1. Membaca hukum sebatas teks.</strong>
+              <p style="margin:0;font-size:14px;color:#d8e3ef;line-height:1.6;">Pasal dihafal, tetapi tujuannya dilupakan. Mukadimah Anggaran Dasar Peradi Nobiliti menegaskan bahwa hukum adalah sarana untuk menyeimbangkan kepastian hukum, kemanfaatan, keadilan, perlindungan hak asasi manusia, dan kesejahteraan masyarakat.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.06);padding:18px 22px;border-radius:6px;border:1px solid rgba(198,166,104,0.2);">
+              <strong style="color:var(--gold);display:block;margin-bottom:6px;font-size:16px;">2. Mengukur keberhasilan dari kemenangan semata.</strong>
+              <p style="margin:0;font-size:14px;color:#d8e3ef;line-height:1.6;">Menang di ruang sidang tidak selalu berarti adil. Karena itu, organisasi ini berpegang pada lima belas prinsip officium nobile, antara lain loyalitas berkeadilan kepada klien, antikonflik kepentingan, serta fair trial dan equality of arms.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.06);padding:18px 22px;border-radius:6px;border:1px solid rgba(198,166,104,0.2);">
+              <strong style="color:var(--gold);display:block;margin-bottom:6px;font-size:16px;">3. Menilai organisasi dari jumlah, bukan mutu.</strong>
+              <p style="margin:0;font-size:14px;color:#d8e3ef;line-height:1.6;">Peradi Nobiliti menjawab catatan Mahkamah Konstitusi dengan Dewan Kehormatan yang independen, pendidikan hukum berkelanjutan yang wajib, dan tata kelola keuangan yang terbuka.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    
+        </div>
+
+        <div style="margin-top:45px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <button type="button" class="btn-back-articles">← Kembali ke Daftar Artikel</button>
+          <a href="#artikel-fondasi" class="btn-read-more" data-article-target="artikel-fondasi">Baca Artikel Lainnya: Filsafat Hukum Fondasi Integritas ➔</a>
+        </div>
       </div>
     </article>
 
@@ -1961,6 +2238,77 @@ document.addEventListener('click', e => {
       p.classList.remove('open');
       p.querySelector('a')?.setAttribute('aria-expanded', 'false');
     });
+  }
+});
+
+
+// === Article Cards to Full View Interactive Switcher (v10.1b) ===
+function showArticleDetail(articleId) {
+  const listView = document.getElementById('article-list-view');
+  const allDetails = document.querySelectorAll('.article-full-view');
+  const targetDetail = document.getElementById(articleId);
+  
+  if (targetDetail) {
+    if (listView) listView.style.display = 'none';
+    allDetails.forEach(function(el) {
+      el.classList.remove('active');
+      el.style.display = 'none';
+    });
+    targetDetail.classList.add('active');
+    targetDetail.style.display = 'block';
+    if (window.location.hash !== '#' + articleId) {
+      window.location.hash = articleId;
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function showArticleList() {
+  const listView = document.getElementById('article-list-view');
+  const allDetails = document.querySelectorAll('.article-full-view');
+  
+  allDetails.forEach(function(el) {
+    el.classList.remove('active');
+    el.style.display = 'none';
+  });
+  if (listView) {
+    listView.style.display = 'block';
+  }
+  if (window.location.hash) {
+    history.pushState(null, null, window.location.pathname);
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('[data-article-target]');
+  if (card) {
+    e.preventDefault();
+    const targetId = card.getAttribute('data-article-target');
+    showArticleDetail(targetId);
+  }
+  const backBtn = e.target.closest('.btn-back-articles');
+  if (backBtn) {
+    e.preventDefault();
+    showArticleList();
+  }
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'artikel-fondasi' || hash === 'artikel-filosofi') {
+    showArticleDetail(hash);
+  } else {
+    showArticleList();
+  }
+});
+
+window.addEventListener('hashchange', function() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'artikel-fondasi' || hash === 'artikel-filosofi') {
+    showArticleDetail(hash);
+  } else {
+    showArticleList();
   }
 });
 
