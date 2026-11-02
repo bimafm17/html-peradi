@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Konsep penyempurnaan desain PERADI NOBILITI. Integritas, independensi, dan akses keadilan.">
-<title>Artikel & Kajian Filsafat Hukum — PERADI NOBILITI (v10.1.2b)</title>
+<title>Artikel & Kajian Filsafat Hukum — PERADI NOBILITI (v11b)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -963,7 +963,7 @@ h2 {
 }
 
 
-/* === DROPDOWN SUB-MENU (v10.1.2b) === */
+/* === DROPDOWN SUB-MENU (v11b) === */
 .menu .nav-item-has-children {
   position: relative;
   display: inline-flex;
@@ -1057,7 +1057,7 @@ h2 {
 }
 
 
-/* === ARTICLE CARDS & DETAIL VIEW (v10.1.2b) === */
+/* === ARTICLE CARDS & DETAIL VIEW (v11b) === */
 .article-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1283,15 +1283,24 @@ h2 {
         <p>Pilih artikel di bawah ini untuk membaca ulasan mendalam, landasan pemikiran filosofis, dan komitmen penegakan etika profesi advokat.</p>
       </div>
 
+            <!-- Filter Tabs Kategori / Tag Artikel (v11b) -->
+      <div class="category-filters" id="artikel-filters" style="display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 35px;">
+        <button class="filter-btn active" data-filter="all">Semua Artikel (4)</button>
+        <button class="filter-btn" data-filter="tulungagung-inews">Tulung Agung iNEWS</button>
+        <button class="filter-btn" data-filter="bacaini">bacaini</button>
+        <button class="filter-btn" data-filter="media-indonesia">Media Indonesia</button>
+        <button class="filter-btn" data-filter="kabinet-ri">Kabinet RI</button>
+      </div>
+
       <div class="article-cards-grid">
-        <!-- Card 1: Image 1 (Fondasi Advokat Berintegritas) -->
-        <article class="article-card" data-article-target="artikel-fondasi">
+        <!-- Card 1: Tulung Agung iNEWS (Fondasi Advokat Berintegritas) -->
+        <article class="article-card" data-article-target="artikel-fondasi" data-tag="tulungagung-inews">
           <div class="article-card-thumb-wrap">
             <img src="images/artikel-fondasi-advokat-berintegritas.jpg" alt="PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas" class="article-card-thumb" loading="lazy">
           </div>
           <div class="article-card-body">
             <div class="article-card-meta">
-              <span class="article-card-badge">LIPUTAN KHUSUS &amp; KHAZANAH</span>
+              <span class="article-card-badge" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">Tulung Agung iNEWS</span>
               <span class="article-card-date">30 Oktober 2026</span>
             </div>
             <h3 class="article-card-title">PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas</h3>
@@ -1302,20 +1311,56 @@ h2 {
           </div>
         </article>
 
-        <!-- Card 2: Image 2 (Usung Filosofi Keadilan) -->
-        <article class="article-card" data-article-target="artikel-filosofi">
+        <!-- Card 2: bacaini (Usung Filosofi Keadilan) -->
+        <article class="article-card" data-article-target="artikel-filosofi" data-tag="bacaini">
           <div class="article-card-thumb-wrap">
             <img src="images/artikel-usung-filosofi-keadilan.jpg" alt="Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan" class="article-card-thumb" loading="lazy">
           </div>
           <div class="article-card-body">
             <div class="article-card-meta">
-              <span class="article-card-badge">SIARAN PERS RESMI</span>
+              <span class="article-card-badge" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">bacaini</span>
               <span class="article-card-date">30 Oktober 2026</span>
             </div>
             <h3 class="article-card-title">Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan</h3>
             <p class="article-card-excerpt">Menolak praktik transaksional perkara, PERADI NOBILITI mengukuhkan komitmen perlindungan hak masyarakat rentan lewat posko pro bono cuma-cuma dan menanggalkan tiga kebiasaan usang advokat demi tegaknya martabat officium nobile.</p>
             <div class="article-card-footer">
               <a href="#artikel-filosofi" class="btn-read-more" data-article-target="artikel-filosofi">Baca Selengkapnya <span>➔</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Media Indonesia (Filsafat Hukum Menuju Keadilan Manusia) -->
+        <article class="article-card" data-article-target="artikel-media-indonesia" data-tag="media-indonesia">
+          <div class="article-card-thumb-wrap">
+            <img src="images/artikel-media-indonesia.jpg" alt="Peradi Nobiliti Resmi Hadir, Usung Filsafat Hukum Menuju Keadilan Manusia" class="article-card-thumb" loading="lazy">
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-badge" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">Media Indonesia</span>
+              <span class="article-card-date">31 Oktober 2026</span>
+            </div>
+            <h3 class="article-card-title">Peradi Nobiliti Resmi Hadir, Usung Filsafat Hukum Menuju Keadilan Manusia</h3>
+            <p class="article-card-excerpt">Peluncuran resmi organisasi advokat di Jakarta Pusat dengan legalitas SK Kemenkumham RI, menegaskan komitmen menjadikan filsafat hukum sebagai landasan utama memulihkan marwah dan integritas profesi advokat.</p>
+            <div class="article-card-footer">
+              <a href="#artikel-media-indonesia" class="btn-read-more" data-article-target="artikel-media-indonesia">Baca Selengkapnya <span>➔</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Kabinet RI (Komentar Guru Besar UI & UB) -->
+        <article class="article-card" data-article-target="artikel-kabinet-ri" data-tag="kabinet-ri">
+          <div class="article-card-thumb-wrap">
+            <img src="images/artikel-kabinet-ri.jpg" alt="PERADI NOBILITI Mengusung Filsafat Hukum: Komentar Guru Besar UI Prof. Hikmahanto dan Guru Besar UB Prof. Rachmad Budiono" class="article-card-thumb" loading="lazy">
+          </div>
+          <div class="article-card-body">
+            <div class="article-card-meta">
+              <span class="article-card-badge" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">Kabinet RI</span>
+              <span class="article-card-date">31 Oktober 2026</span>
+            </div>
+            <h3 class="article-card-title">PERADI NOBILITI Mengusung Filsafat Hukum: Komentar Guru Besar UI &amp; UB</h3>
+            <p class="article-card-excerpt">Lahirnya PERADI NOBILITI membawa visi kekuatan profesional sekaligus kekuatan intelektual: Prof. Hikmahanto Juwana (UI) dan Prof. Abdul Rachmad Budiono (UB) mengulas posisi strategis penegakan etika profesi.</p>
+            <div class="article-card-footer">
+              <a href="#artikel-kabinet-ri" class="btn-read-more" data-article-target="artikel-kabinet-ri">Baca Selengkapnya <span>➔</span></a>
             </div>
           </div>
         </article>
@@ -1330,7 +1375,7 @@ h2 {
 
       <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
-          <span style="background:rgba(16,36,71,0.08);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">LIPUTAN KHUSUS &amp; KHAZANAH</span>
+          <span style="background:rgba(198,166,104,0.25);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">Tulung Agung iNEWS</span>
           <span style="color:var(--muted);font-size:13px;">30 Oktober 2026</span>
           <span style="background:rgba(198,166,104,0.2);color:var(--navy);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;">SK Menkumham RI No. AHU-0007744.AH.01.07.TAHUN 2026</span>
         </div>
@@ -1574,6 +1619,138 @@ h2 {
           <a href="#artikel-fondasi" class="btn-read-more" data-article-target="artikel-fondasi">Baca Artikel Lainnya: Filsafat Hukum Fondasi Integritas ➔</a>
         </div>
       </div>
+        <!-- VIEW 4: ARTICLE 3 FULL DETAIL (Media Indonesia) -->
+    <article id="artikel-media-indonesia" class="article-full-view">
+      <div class="article-back-bar">
+        <button type="button" class="btn-back-articles">&larr; Kembali ke Daftar Artikel</button>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+          <span style="background:rgba(198,166,104,0.25);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">Media Indonesia</span>
+          <span style="color:var(--muted);font-size:13px;">31 Oktober 2026</span>
+          <span style="background:rgba(198,166,104,0.2);color:var(--navy);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;">SK Menkumham RI No. AHU-0007744.AH.01.07.TAHUN 2026</span>
+        </div>
+        <h1 style="font:34px/1.3 var(--serif);color:var(--navy);margin:0 0 16px;">Peradi Nobiliti Resmi Hadir, Usung Filsafat Hukum Menuju Keadilan Manusia</h1>
+        <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:28px;">Menjadikan filsafat hukum sebagai kompas penentu arah bagi para advokat guna memulihkan marwah, integritas, dan martabat officium nobile di tengah dinamika pembaruan hukum nasional.</p>
+
+        <!-- Featured Image 3 -->
+        <div class="article-featured-image-box">
+          <img src="images/artikel-media-indonesia.jpg" alt="Peradi Nobiliti Resmi Hadir, Usung Filsafat Hukum Menuju Keadilan Manusia" class="article-featured-img">
+          <div class="article-featured-caption">
+            <strong>Foto Dokumentasi Media Indonesia:</strong> Pertemuan konsolidasi pimpinan DPN PERADI NOBILITI di Jakarta dalam perumusan langkah strategis dan peluncuran resmi organisasi.
+          </div>
+        </div>
+
+        <div style="font-size:16px;line-height:1.8;color:var(--ink);">
+          <p><strong>JAKARTA</strong> — Perhimpunan Advokat Indonesia Nobiliti (Peradi Nobiliti) secara resmi meluncurkan organisasinya kepada publik melalui pengukuhan terbatas di sekretariatnya, Jalan Johar Baru II Nomor 12, Jakarta Pusat. Organisasi profesi advokat ini telah mengantongi legalitas badan hukum resmi dari Pemerintah Republik Indonesia berdasarkan Keputusan Menteri Hukum RI Nomor AHU-0007744.AH.01.07.Tahun 2026 tertanggal 8 Oktober 2026 dan Akta Pendirian Notaris Nomor 8 tanggal 6 Oktober 2026.</p>
+
+          <p>Kelahiran Peradi Nobiliti membawa misi mendasar: mengembalikan marwah, kehormatan, dan integritas profesi advokat dengan menjadikan <strong>filsafat hukum</strong> sebagai landasan utama dalam berpikir dan bertindak.</p>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Kritik atas Praktik Hukum Tanpa Arah</h3>
+          <p>Peradi Nobiliti hadir tepat di momentum persimpangan sejarah pembaruan hukum nasional, seiring diberlakukannya kodifikasi KUHP dan KUHAP baru serta pembahasan intensif RUU Advokat pasca-Putusan Mahkamah Konstitusi Nomor 126/PUU-XXIV/2026. Di tengah situasi transisi ini, Peradi Nobiliti mengkritisi keras kecenderungan praktik hukum yang mulai kehilangan kompas moral.</p>
+
+          <p>Organisasi mengimbau seluruh praktisi hukum untuk menanggalkan tiga kebiasaan lama yang mereduksi martabat advokat:</p>
+          <div style="background:#f4f6f8;border:1px solid var(--line);border-radius:8px;padding:22px 26px;margin:20px 0;">
+            <p style="margin:0 0 12px;"><strong>1. Berhenti Membaca Hukum Sebatas Teks:</strong> Menghindari cara pandang formalistis yang menempatkan pasal undang-undang semata sebagai instrumen kaku tanpa menyelami rasa keadilan masyarakat.</p>
+            <p style="margin:0 0 12px;"><strong>2. Mengukur Keberhasilan Bukan dari Menang Perkara:</strong> Menolak anggapan bahwa kemenangan di pengadilan adalah segalanya, terlebih jika ditempuh dengan mengorbankan nurani, kebenaran, dan etika.</p>
+            <p style="margin:0;"><strong>3. Menolak Perlombaan Kuantitas Tanpa Integritas:</strong> Menolak orientasi organisasi yang hanya berburu jumlah keanggotaan massal tanpa disertai seleksi kompetensi yang ketat, ujian jujur, dan transparansi tata kelola.</p>
+          </div>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Filsafat Hukum sebagai Kompas Pembela Keadilan</h3>
+          <p>Ketua Umum Peradi Nobiliti, <strong>Dr. Supriarno, S.H., M.H.</strong>, menegaskan bahwa advokat yang hebat bukan mereka yang sekadar hafal ratusan pasal, melainkan mereka yang memahami hakikat kemanusiaan di balik lahirnya hukum.</p>
+
+          <blockquote style="border-left:4px solid var(--gold);padding:18px 24px;margin:28px 0;background:#f8f9fa;border-radius:0 8px 8px 0;font-style:italic;color:var(--navy);">
+            "Filsafat hukum adalah kompas bagi seorang advokat. Tanpa filsafat, pasal hanya menjadi alat untuk menang. Dengan filsafat, pasal menjadi jalan menuju keadilan. Kita sering lupa bahwa undang-undang dibuat oleh manusia untuk melayani manusia, bukan sebaliknya. Karena itu, setiap advokat Peradi Nobiliti harus berani bertanya sebelum membela: adilkah ini, bermanfaatkah ini, dan apakah martabat manusia terlindungi? Pertanyaan itulah yang membedakan advokat yang sekadar terampil dari advokat yang sungguh mulia."
+            <footer style="margin-top:10px;font-style:normal;font-weight:700;color:var(--muted);font-size:13px;">— Dr. Supriarno, S.H., M.H., Ketua Umum Peradi Nobiliti</footer>
+          </blockquote>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Tantangan Kecerdasan Artifisial &amp; Dukungan Akademisi Nasional</h3>
+          <p>Sekretaris Jenderal Peradi Nobiliti, <strong>Mohammad Trijanto, S.H., M.M., M.H.</strong>, menambahkan bahwa di era modern saat ini, disrupsi teknologi seperti Kecerdasan Artifisial (Artificial Intelligence / AI) memang dapat menghasilkan draf gugatan atau analisis berkas dalam hitungan detik. Namun demikian, teknologi tidak akan pernah memiliki hati nurani untuk menakar rasa keadilan yang dirasakan oleh manusia.</p>
+
+          <p>Visi pembaruan ini mendapat dukungan kuat dari tokoh-tokoh akademisi hukum terkemuka di tanah air, antara lain <strong>Prof. Hikmahanto Juwana</strong> (Guru Besar Hukum Internasional Universitas Indonesia), serta <strong>Prof. Dr. Abdul Rachmad Budiono, S.H., M.H.</strong> (Guru Besar Universitas Brawijaya sekaligus Ketua Dewan Kehormatan / Pengawas Peradi Nobiliti) bersama <strong>Hari Purwanto</strong> selaku Anggota Pengawas.</p>
+
+          <p>Menutup keterangannya, Ketua Umum Supriarno menegaskan ikrar Peradi Nobiliti di hadapan publik:</p>
+          <blockquote style="border-left:4px solid var(--navy);padding:18px 24px;margin:28px 0;background:#f4f6f8;border-radius:0 8px 8px 0;color:var(--navy);font-weight:600;">
+            "Kami tidak hadir untuk sekadar menambah panjang daftar organisasi advokat. Kami hadir untuk membuktikan bahwa organisasi advokat dapat dipercaya: etiknya ditegakkan tanpa pandang bulu, ujiannya jujur tanpa transaksi kelulusan, keuangannya diaudit terbuka oleh akuntan publik, dan bantuan hukumnya benar-benar hadir melayani rakyat kecil yang membutuhkan keadilan."
+          </blockquote>
+        </div>
+
+        <div style="margin-top:45px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <button type="button" class="btn-back-articles">&larr; Kembali ke Daftar Artikel</button>
+          <a href="#artikel-kabinet-ri" class="btn-read-more" data-article-target="artikel-kabinet-ri">Baca Artikel Berikutnya: Komentar Guru Besar UI &amp; UB ➔</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- VIEW 5: ARTICLE 4 FULL DETAIL (Kabinet RI) -->
+    <article id="artikel-kabinet-ri" class="article-full-view">
+      <div class="article-back-bar">
+        <button type="button" class="btn-back-articles">&larr; Kembali ke Daftar Artikel</button>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:45px;box-shadow:0 8px 30px rgba(11,25,50,0.06);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+          <span style="background:rgba(198,166,104,0.25);color:var(--navy);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;">Kabinet RI</span>
+          <span style="color:var(--muted);font-size:13px;">31 Oktober 2026</span>
+          <span style="background:rgba(198,166,104,0.2);color:var(--navy);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;">Analisis Intelektual &amp; Kebijakan</span>
+        </div>
+        <h1 style="font:34px/1.3 var(--serif);color:var(--navy);margin:0 0 16px;">PERADI NOBILITI Mengusung Filsafat Hukum di Bawah Kepemimpinan Dr. Supriarno, S.H., M.H.: Ini Komentar Guru Besar UI Prof. Hikmahanto dan Guru Besar UB Prof. Rachmad Budiono</h1>
+        <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:28px;">Menghadirkan tradisi baru advokat sebagai kekuatan profesional sekaligus kekuatan intelektual yang memberi sumbangsih nyata bagi pembangunan dan peradaban hukum Indonesia.</p>
+
+        <!-- Featured Image 4 -->
+        <div class="article-featured-image-box">
+          <img src="images/artikel-kabinet-ri.jpg" alt="PERADI NOBILITI Mengusung Filsafat Hukum: Komentar Guru Besar UI Prof. Hikmahanto dan Guru Besar UB Prof. Rachmad Budiono" class="article-featured-img">
+          <div class="article-featured-caption">
+            <strong>Foto Publikasi Kabinet RI:</strong> Jajaran inisiator dan dewan pakar hukum dalam forum pembahasan arah strategis intelektual PERADI NOBILITI.
+          </div>
+        </div>
+
+        <div style="font-size:16px;line-height:1.8;color:var(--ink);">
+          <p>Kelahiran <strong>PERADI NOBILITI</strong> membawa warna tersendiri dalam perkembangan dinamika organisasi profesi advokat di Indonesia. Dipimpin oleh <strong>Dr. Supriarno, S.H., M.H.</strong> (Dr. Priarno), seorang doktor ilmu hukum dengan keahlian mendalam di bidang filsafat hukum, perkumpulan ini mengusung visi pembaruan profesi advokat yang tidak hanya bertumpu pada kemahiran beracara di pengadilan, tetapi juga berakar pada kedalaman pemikiran filosofis, integritas moralitas luhur, dan kontribusi intelektual terhadap pembangunan hukum nasional.</p>
+
+          <p>Kehadiran PERADI NOBILITI mengangkat sebuah gagasan mendasar: bahwa organisasi advokat masa depan harus mampu menjadi kekuatan profesional sekaligus kekuatan intelektual yang ikut memperkaya perkembangan hukum Indonesia. Terkait hal tersebut, dua Guru Besar hukum terkemuka memberikan pandangan objektif dan apresiasi strategis.</p>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Prof. Hikmahanto Juwana: "Pemain Signifikan bagi Advokat di Indonesia"</h3>
+          <p>Guru Besar Hukum Internasional Universitas Indonesia, <strong>Prof. Hikmahanto Juwana</strong>, memberikan penegasan mengenai posisi strategis PERADI NOBILITI dalam tatanan penegakan hukum:</p>
+
+          <blockquote style="border-left:4px solid var(--gold);padding:18px 24px;margin:28px 0;background:#f8f9fa;border-radius:0 8px 8px 0;font-style:italic;color:var(--navy);">
+            "PERADI NOBILITI harus menjadi pemain signifikan bagi para advokat di Indonesia."
+            <footer style="margin-top:10px;font-style:normal;font-weight:700;color:var(--muted);font-size:13px;">— Prof. Hikmahanto Juwana, Guru Besar Hukum Internasional Universitas Indonesia</footer>
+          </blockquote>
+
+          <p>Pernyataan tersebut memuat pesan kunci bahwa eksistensi sebuah organisasi profesi harus menghadirkan nilai tambah (<em>added value</em>). Organisasi tidak cukup hanya berbangga dengan kelengkapan kepengurusan administratif atau kuantitas massa anggota, melainkan wajib mampu membangun kapasitas keahlian, memperkuat perlindungan hak imunitas advokat, meningkatkan mutu layanan hukum, dan mengambil peran aktif dalam pembaruan hukum nasional.</p>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Prof. Abdul Rachmad Budiono: "Siap Menambah Khazanah Ilmu Hukum"</h3>
+          <p>Sementara itu, Guru Besar Universitas Brawijaya yang dipercaya mengemban amanah sebagai Ketua Dewan Kehormatan PERADI NOBILITI, <strong>Prof. Dr. Abdul Rachmad Budiono, S.H., M.H.</strong>, menegaskan orientasi intelektual dan akademis perkumpulan:</p>
+
+          <blockquote style="border-left:4px solid var(--gold);padding:18px 24px;margin:28px 0;background:#f8f9fa;border-radius:0 8px 8px 0;font-style:italic;color:var(--navy);">
+            "PERADI NOBILITI siap menambah khazanah hukum."
+            <footer style="margin-top:10px;font-style:normal;font-weight:700;color:var(--muted);font-size:13px;">— Prof. Dr. Abdul Rachmad Budiono, S.H., M.H., Guru Besar FH Universitas Brawijaya</footer>
+          </blockquote>
+
+          <p>Pernyataan ini memperluas ruang lingkup organisasi advokat. PERADI NOBILITI menolak membatasi dirinya hanya sebagai entitas administratif izin profesi, melainkan bertekad menjadi laboratorium pengembangan ilmu hukum. Pengayaan khazanah hukum ini diejawantahkan melalui riset hukum berkala, publikasi ilmiah, diskusi filsafat hukum tematik, dan telaah kritis terhadap berbagai isu hukum kontemporer.</p>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Sekjen Mohammad Trijanto: Menjawab Disrupsi AI Tanpa Menghilangkan Nurani</h3>
+          <p>Sekretaris Jenderal DPN PERADI NOBILITI, <strong>Mohammad Trijanto, S.H., M.M., M.H.</strong>, turut menyoroti tantangan era digital, khususnya akselerasi adopsi Kecerdasan Artifisial (Artificial Intelligence / AI) dalam praktik hukum modern.</p>
+
+          <p>Menurut Trijanto, kehadiran AI mendisrupsi cara kerja analisis berkas dan riset yurisprudensi. Advokat masa kini wajib adaptif memanfaatkan efisiensi AI, namun pada saat yang sama harus memiliki benteng etika yang tangguh terhadap perlindungan kerahasiaan klien dan akurasi data. Bagi PERADI NOBILITI, AI diposisikan sebagai alat bantu, bukan pengganti intuisi, empati, dan nurani seorang advokat.</p>
+
+          <h3 style="color:var(--navy);font:22px/1.4 var(--serif);margin:32px 0 14px;">Dr. Supriarno: Berpikir Melampaui Teks Menuju Keadilan Sejati</h3>
+          <p>Ketua Umum DPN PERADI NOBILITI, <strong>Dr. Supriarno, S.H., M.H.</strong>, membawa keyakinan bahwa filsafat hukum melatih advokat untuk tidak terperangkap dalam positivisme sempit. Advokat dituntut jeli menangkap hakikat keadilan di balik teks pasal, menguji legitimasi penggunaan wewenang, dan berani bersuara memperjuangkan martabat kemanusiaan.</p>
+
+          <blockquote style="border-left:4px solid var(--navy);padding:18px 24px;margin:28px 0;background:#f4f6f8;border-radius:0 8px 8px 0;color:var(--navy);font-weight:600;">
+            "Filsafat hukum memberikan kemampuan bagi advokat untuk berpikir melampaui teks peraturan, tanpa meninggalkan kepastian hukum dan prinsip negara hukum berkeadilan."
+          </blockquote>
+
+          <p>Melalui pendidikan profesi berkesinambungan, penguatan riset filsafat, akuntabilitas audit keuangan, dan jejaring solidaritas internasional, PERADI NOBILITI hadir untuk membangun martabat profesi advokat, memperkaya pemikiran hukum, dan mengawal peradaban hukum Indonesia.</p>
+        </div>
+
+        <div style="margin-top:45px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <button type="button" class="btn-back-articles">&larr; Kembali ke Daftar Artikel</button>
+          <a href="#artikel-fondasi" class="btn-read-more" data-article-target="artikel-fondasi">Kembali ke Artikel: Fondasi Advokat Berintegritas ➔</a>
+        </div>
+      </div>
     </article>
 
   </div>
@@ -1631,9 +1808,9 @@ h2 {
         <a href="https://www.facebook.com/profile.php?id=61595977707753" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook PERADI NOBILITI" title="Facebook Official"><svg><use href="#icon-facebook"/></svg></a>
         <a href="https://www.tiktok.com/@peradinobiliti?lang=en" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok PERADI NOBILITI" title="TikTok @peradinobiliti"><svg><use href="#icon-tiktok"/></svg></a>
         <a href="mailto:peradinobiliti1@gmail.com" class="social-btn" aria-label="Email Resmi PERADI NOBILITI" title="Email: peradinobiliti1@gmail.com"><svg><use href="#icon-mail"/></svg></a>
-      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v10.1.2b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
+      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v11b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
 <a href="#main" class="back-top" aria-label="Kembali ke atas"><svg class="icon"><use href="#arrow"/></svg></a>
-<!-- Floating WhatsApp Button & Popover (v10.1.2b) -->
+<!-- Floating WhatsApp Button & Popover (v11b) -->
 <div class="wa-floating-container" id="wa-floating-container">
   <div class="wa-floating-menu" id="wa-floating-menu" aria-hidden="true">
     <div class="wa-menu-header">
@@ -1676,7 +1853,7 @@ h2 {
 
 <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="dialog-close" aria-label="Tutup dialog"><svg class="icon"><use href="#plus"/></svg></button></div><div class="dialog-body" id="dialog-body"></div></dialog>
 <script>
-// Deklarasi helper global & WA Floating Handler paling awal (v10.1.2b)
+// Deklarasi helper global & WA Floating Handler paling awal (v11b)
 const $ = s => {
   if (!s || typeof s !== 'string' || !s.trim()) return null;
   try { return document.querySelector(s); } catch(e) { return null; }
@@ -2182,7 +2359,7 @@ if('IntersectionObserver' in window){
   });
 }
 
-// Dropdown sub-menu toggle for touch / click (v10.1.2b)
+// Dropdown sub-menu toggle for touch / click (v11b)
 $$('.nav-item-has-children > a[href="#"]').forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
@@ -2208,75 +2385,90 @@ document.addEventListener('click', e => {
 });
 
 
-// === Article Cards to Full View Interactive Switcher (v10.1.2b) ===
-function showArticleDetail(articleId) {
-  const listView = document.getElementById('article-list-view');
-  const allDetails = document.querySelectorAll('.article-full-view');
-  const targetDetail = document.getElementById(articleId);
-  
-  if (targetDetail) {
-    if (listView) listView.style.display = 'none';
-    allDetails.forEach(function(el) {
-      el.classList.remove('active');
-      el.style.display = 'none';
-    });
-    targetDetail.classList.add('active');
-    targetDetail.style.display = 'block';
-    if (window.location.hash !== '#' + articleId) {
-      window.location.hash = articleId;
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-}
+// === Article Cards to Full View Interactive Switcher & Filter Tabs (v11b) ===
+   function showArticleDetail(articleId) {
+     const listView = document.getElementById('article-list-view');
+     const allDetails = document.querySelectorAll('.article-full-view');
+     const targetDetail = document.getElementById(articleId);
+     if (!targetDetail) return;
 
-function showArticleList() {
-  const listView = document.getElementById('article-list-view');
-  const allDetails = document.querySelectorAll('.article-full-view');
-  
-  allDetails.forEach(function(el) {
-    el.classList.remove('active');
-    el.style.display = 'none';
-  });
-  if (listView) {
-    listView.style.display = 'block';
-  }
-  if (window.location.hash) {
-    history.pushState(null, null, window.location.pathname);
-  }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+     if (listView) listView.style.display = 'none';
+     allDetails.forEach(detail => detail.style.display = 'none');
+     targetDetail.style.display = 'block';
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+     if (window.location.hash !== '#' + articleId) {
+       window.location.hash = articleId;
+     }
+   }
 
-document.addEventListener('click', function(e) {
-  const card = e.target.closest('[data-article-target]');
-  if (card) {
-    e.preventDefault();
-    const targetId = card.getAttribute('data-article-target');
-    showArticleDetail(targetId);
-  }
-  const backBtn = e.target.closest('.btn-back-articles');
-  if (backBtn) {
-    e.preventDefault();
-    showArticleList();
-  }
-});
+   function showArticleList() {
+     const listView = document.getElementById('article-list-view');
+     const allDetails = document.querySelectorAll('.article-full-view');
+     if (listView) listView.style.display = 'block';
+     allDetails.forEach(detail => detail.style.display = 'none');
+     if (window.location.hash) {
+       history.pushState("", document.title, window.location.pathname + window.location.search);
+     }
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+   }
 
-window.addEventListener('DOMContentLoaded', function() {
-  const hash = window.location.hash.replace('#', '');
-  if (hash === 'artikel-fondasi' || hash === 'artikel-filosofi') {
-    showArticleDetail(hash);
-  } else {
-    showArticleList();
-  }
-});
+   // Event delegation for clicking cards or read-more links
+   document.addEventListener('click', function(e) {
+     const card = e.target.closest('[data-article-target]');
+     if (card) {
+       e.preventDefault();
+       const targetId = card.getAttribute('data-article-target');
+       showArticleDetail(targetId);
+       return;
+     }
+     const backBtn = e.target.closest('.btn-back-articles');
+     if (backBtn) {
+       e.preventDefault();
+       showArticleList();
+       return;
+     }
+   });
 
-window.addEventListener('hashchange', function() {
-  const hash = window.location.hash.replace('#', '');
-  if (hash === 'artikel-fondasi' || hash === 'artikel-filosofi') {
-    showArticleDetail(hash);
-  } else {
-    showArticleList();
-  }
-});
+   // Filter tabs in artikel.html
+   const artikelFilterBtns = $$('#artikel-filters .filter-btn');
+   const articleCards = $$('.article-cards-grid .article-card');
+   if(artikelFilterBtns.length && articleCards.length){
+     artikelFilterBtns.forEach(btn => {
+       btn.addEventListener('click', (e) => {
+         e.preventDefault();
+         artikelFilterBtns.forEach(b => b.classList.remove('active'));
+         btn.classList.add('active');
+         const f = btn.dataset.filter;
+         articleCards.forEach(card => {
+           if(f === 'all' || card.dataset.tag === f){
+             card.style.display = '';
+           } else {
+             card.style.display = 'none';
+           }
+         });
+       });
+     });
+   }
+
+   // Handle direct URL hash loading
+   const validArticleHashes = ['artikel-fondasi', 'artikel-filosofi', 'artikel-media-indonesia', 'artikel-kabinet-ri'];
+   document.addEventListener('DOMContentLoaded', function() {
+     const hash = window.location.hash.replace('#', '');
+     if (validArticleHashes.includes(hash)) {
+       showArticleDetail(hash);
+     } else {
+       showArticleList();
+     }
+   });
+
+   window.addEventListener('hashchange', function() {
+     const hash = window.location.hash.replace('#', '');
+     if (validArticleHashes.includes(hash)) {
+       showArticleDetail(hash);
+     } else {
+       showArticleList();
+     }
+   });
 
 </script>
 </body>

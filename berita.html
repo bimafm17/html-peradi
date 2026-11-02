@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Konsep penyempurnaan desain PERADI NOBILITI. Integritas, independensi, dan akses keadilan.">
-<title>Berita Seputar Nobiliti & Penegakan Hukum — PERADI NOBILITI (v10.1.2b)</title>
+<title>Berita Seputar Nobiliti & Penegakan Hukum — PERADI NOBILITI (v11b)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -963,7 +963,7 @@ h2 {
 }
 
 
-/* === DROPDOWN SUB-MENU (v10.1.2b) === */
+/* === DROPDOWN SUB-MENU (v11b) === */
 .menu .nav-item-has-children {
   position: relative;
   display: inline-flex;
@@ -1057,7 +1057,7 @@ h2 {
 }
 
 
-/* === ARTICLE CARDS IN BERITA (v10.1.2b) === */
+/* === ARTICLE CARDS IN BERITA (v11b) === */
 .article-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1223,13 +1223,27 @@ h2 {
       <p>Kumpulan siaran pers, artikel kajian filsafat hukum, agenda kerja organisasi, regulasi nasional, dan kabar penegakan hukum dari DPN PERADI NOBILITI.</p>
     </div>
 
+        <!-- Filter Tabs Kategori / Tag Berita (v11b) -->
+    <div class="category-filters" id="berita-filters" style="display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 35px;">
+      <button class="filter-btn active" data-filter="all">Semua Berita (10)</button>
+      <button class="filter-btn" data-filter="tulungagung-inews">Tulung Agung iNEWS</button>
+      <button class="filter-btn" data-filter="bacaini">bacaini</button>
+      <button class="filter-btn" data-filter="media-indonesia">Media Indonesia</button>
+      <button class="filter-btn" data-filter="kabinet-ri">Kabinet RI</button>
+      <button class="filter-btn" data-filter="organisasi">Organisasi</button>
+      <button class="filter-btn" data-filter="legalitas">Legalitas</button>
+      <button class="filter-btn" data-filter="kajian-hukum">Kajian Hukum</button>
+      <button class="filter-btn" data-filter="layanan-publik">Layanan Publik</button>
+      <button class="filter-btn" data-filter="teknologi">Teknologi</button>
+      <button class="filter-btn" data-filter="etika-profesi">Etika Profesi</button>
+    </div>
+
     <div class="news-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
-      
-      <!-- Berita / Artikel 1 (Image 1) -->
-      <article class="news-card">
+      <!-- Berita / Artikel 1 (Tulung Agung iNEWS) -->
+      <article class="news-card" data-tag="tulungagung-inews">
         <div class="news-thumb">
           <img src="images/artikel-fondasi-advokat-berintegritas.jpg" alt="PERADI NOBILITI Resmi Hadir, Filsafat Hukum Jadi Fondasi Membangun Advokat Berintegritas" loading="lazy">
-          <span class="news-tag" style="background:var(--gold);color:var(--navy);font-weight:700;">Artikel Khusus</span>
+          <span class="news-tag" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">Tulung Agung iNEWS</span>
         </div>
         <div class="news-content">
           <div class="news-meta">
@@ -1247,11 +1261,11 @@ h2 {
         </div>
       </article>
 
-      <!-- Berita / Artikel 2 (Image 2) -->
-      <article class="news-card">
+      <!-- Berita / Artikel 2 (bacaini) -->
+      <article class="news-card" data-tag="bacaini">
         <div class="news-thumb">
           <img src="images/artikel-usung-filosofi-keadilan.jpg" alt="Peradi Nobiliti Resmi Berdiri, Usung Filosofi Keadilan, Bukan Sekadar Menang di Pengadilan" loading="lazy">
-          <span class="news-tag" style="background:var(--gold);color:var(--navy);font-weight:700;">Siaran Pers</span>
+          <span class="news-tag" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">bacaini</span>
         </div>
         <div class="news-content">
           <div class="news-meta">
@@ -1269,8 +1283,52 @@ h2 {
         </div>
       </article>
 
-      <!-- Berita 3: Konsolidasi Jajaran Pimpinan DPN -->
-      <article class="news-card">
+      <!-- Berita / Artikel 3 (Media Indonesia) -->
+      <article class="news-card" data-tag="media-indonesia">
+        <div class="news-thumb">
+          <img src="images/artikel-media-indonesia.jpg" alt="Peradi Nobiliti Resmi Hadir, Usung Filsafat Hukum Menuju Keadilan Manusia" loading="lazy">
+          <span class="news-tag" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">Media Indonesia</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <time datetime="2026-10-31">31 Oktober 2026</time>
+            <span>•</span>
+            <span>Warta Nasional</span>
+          </div>
+          <h3 class="news-title">
+            Peradi Nobiliti Resmi Hadir, Usung Filsafat Hukum Menuju Keadilan Manusia
+          </h3>
+          <p class="news-excerpt">
+            Peluncuran resmi organisasi advokat di Jakarta Pusat dengan legalitas SK Kemenkumham RI, menegaskan komitmen menjadikan filsafat hukum sebagai landasan utama memulihkan marwah advokat.
+          </p>
+          <a href="artikel.html#artikel-media-indonesia" class="news-link">Selengkapnya ➔</a>
+        </div>
+      </article>
+
+      <!-- Berita / Artikel 4 (Kabinet RI) -->
+      <article class="news-card" data-tag="kabinet-ri">
+        <div class="news-thumb">
+          <img src="images/artikel-kabinet-ri.jpg" alt="PERADI NOBILITI Mengusung Filsafat Hukum: Komentar Guru Besar UI Prof. Hikmahanto dan Guru Besar UB Prof. Rachmad Budiono" loading="lazy">
+          <span class="news-tag" style="background:rgba(198,166,104,0.25);color:var(--navy);font-weight:700;">Kabinet RI</span>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <time datetime="2026-10-31">31 Oktober 2026</time>
+            <span>•</span>
+            <span>Kajian Kebijakan</span>
+          </div>
+          <h3 class="news-title">
+            PERADI NOBILITI Mengusung Filsafat Hukum: Komentar Guru Besar UI &amp; UB
+          </h3>
+          <p class="news-excerpt">
+            Lahirnya PERADI NOBILITI membawa visi kekuatan profesional sekaligus kekuatan intelektual: Prof. Hikmahanto Juwana (UI) dan Prof. Abdul Rachmad Budiono (UB) mengulas posisi strategis penegakan etika profesi.
+          </p>
+          <a href="artikel.html#artikel-kabinet-ri" class="news-link">Selengkapnya ➔</a>
+        </div>
+      </article>
+
+      <!-- Berita 5: Konsolidasi Jajaran Pimpinan DPN -->
+      <article class="news-card" data-tag="organisasi">
         <div class="news-thumb">
           <img src="images/foto-ikrar-malam-banner-filsafat.jpeg" alt="Konsolidasi Jajaran Pimpinan DPN" loading="lazy">
           <span class="news-tag">Organisasi</span>
@@ -1285,14 +1343,14 @@ h2 {
             Konsolidasi Jajaran Pimpinan DPN: Meneguhkan Standar Moral &amp; Etika Advokat
           </h3>
           <p class="news-excerpt">
-            Pertemuan intensif pimpinan Dewan Pimpinan Nasional dalam merumuskan standarisasi pengawasan Dewan Kehormatan independen.
+            Pertemuan koordinasi jajaran inisiator dan dewan pimpinan nasional merumuskan arah kebijakan kelembagaan serta komitmen pelayanan hukum bagi masyarakat.
           </p>
-          <a href="kegiatan.html" class="news-link">Selengkapnya ➔</a>
+          <a href="#" class="news-link" data-modal="modal_berita_1">Baca Ringkasan ➔</a>
         </div>
       </article>
 
-      <!-- Berita 4: Pengesahan SK Kemenkumham RI -->
-      <article class="news-card">
+      <!-- Berita 6: Pengesahan SK Kemenkumham RI -->
+      <article class="news-card" data-tag="legalitas">
         <div class="news-thumb">
           <img src="images/rapat-notaris-pendirian.jpeg" alt="Pengesahan SK Kemenkumham RI" loading="lazy">
           <span class="news-tag">Legalitas</span>
@@ -1301,93 +1359,93 @@ h2 {
           <div class="news-meta">
             <time datetime="2026-10-08">8 Oktober 2026</time>
             <span>•</span>
-            <span>Sekretariat Jenderal</span>
+            <span>Sekretariat DPN</span>
           </div>
           <h3 class="news-title">
             Kemenkumham RI Terbitkan SK Badan Hukum AHU-0007744.AH.01.07.TAHUN 2026
           </h3>
           <p class="news-excerpt">
-            Negara resmi mengesahkan status badan hukum perkumpulan DPN PERADI NOBILITI berdasarkan Akta Notaris No. 8 tertanggal 21 September 2026.
+            Pemerintah secara resmi mengesahkan status badan hukum perkumpulan advokat PERADI NOBILITI, mempertegas legitimasi organisasi secara nasional.
           </p>
-          <a href="dokumen.html" class="news-link">Selengkapnya ➔</a>
+          <a href="#" class="news-link" data-modal="modal_berita_2">Baca Ringkasan ➔</a>
         </div>
       </article>
 
-      <!-- Berita 5: Kesiapan KUHP dan KUHAP Baru -->
-      <article class="news-card">
+      <!-- Berita 7: Kesiapan Menghadapi KUHP Baru -->
+      <article class="news-card" data-tag="kajian-hukum">
         <div class="news-thumb">
-          <img src="images/buku-filsafat-hukum-1.jpeg" alt="Kesiapan KUHP dan KUHAP Baru" loading="lazy">
+          <img src="images/buku-filsafat-hukum-1.jpeg" alt="Kajian Pembaruan Hukum Nasional" loading="lazy">
           <span class="news-tag">Kajian Hukum</span>
         </div>
         <div class="news-content">
           <div class="news-meta">
-            <time datetime="2026-10-28">28 Oktober 2026</time>
+            <time datetime="2026-10-15">15 Oktober 2026</time>
             <span>•</span>
-            <span>Litbang Nobiliti</span>
+            <span>Bidang Litbang</span>
           </div>
           <h3 class="news-title">
-            Kesiapan Menghadapi KUHP &amp; KUHAP Baru 2026: Advokat Sebagai Penegak Hukum Setara
+            Kesiapan Menghadapi KUHP &amp; KUHAP Baru 2026: Advokat Sebagai Pilar Penegak Hukum
           </h3>
           <p class="news-excerpt">
-            PERADI NOBILITI menyiapkan modul pelatihan dan sertifikasi bagi advokat anggota untuk menguasai keadilan restoratif dan perlindungan hak asasi.
+            PERADI NOBILITI menyusun modul kurikulum pembekalan advokat guna menyongsong berlakunya hukum pidana materiil dan formil baru secara profesional.
           </p>
-          <a href="artikel.html#artikel-fondasi" class="news-link">Selengkapnya ➔</a>
+          <a href="#" class="news-link" data-modal="modal_berita_3">Baca Ringkasan ➔</a>
         </div>
       </article>
 
-      <!-- Berita 6: Pembentukan LBH Nobiliti -->
-      <article class="news-card">
+      <!-- Berita 8: Pembentukan LBH Nobiliti -->
+      <article class="news-card" data-tag="layanan-publik">
         <div class="news-thumb">
-          <img src="images/silaturahmi-koordinasi-pengurus.jpeg" alt="Peluncuran Posko Bantuan Hukum" loading="lazy">
+          <img src="images/kerjasama-delegasi-hotel-1.jpeg" alt="Komitmen Bantuan Hukum Cuma-Cuma" loading="lazy">
           <span class="news-tag">Layanan Publik</span>
         </div>
         <div class="news-content">
           <div class="news-meta">
-            <time datetime="2026-10-29">29 Oktober 2026</time>
+            <time datetime="2026-10-20">20 Oktober 2026</time>
             <span>•</span>
-            <span>LBH Nobiliti</span>
+            <span>Bidang Advokasi</span>
           </div>
           <h3 class="news-title">
-            Pembentukan LBH Nobiliti: Komitmen Layanan Bantuan Hukum Cuma-Cuma Terakreditasi BPHN
+            Pembentukan LBH Nobiliti: Komitmen Layanan Bantuan Hukum Cuma-Cuma bagi Kelompok Rentan
           </h3>
           <p class="news-excerpt">
-            Pembukaan saluran pendampingan pro bono bagi kaum buruh, pekerja migran, korban kekerasan, dan masyarakat pencari keadilan rentan.
+            Akses keadilan bagi masyarakat miskin dan marjinal diwujudkan lewat pembentukan Lembaga Bantuan Hukum terakreditasi BPHN di setiap cabang daerah.
           </p>
-          <a href="layanan.html" class="news-link">Selengkapnya ➔</a>
+          <a href="#" class="news-link" data-modal="modal_berita_4">Baca Ringkasan ➔</a>
         </div>
       </article>
 
-      <!-- Berita 7: Sosialisasi Portal Digital -->
-      <article class="news-card">
+      <!-- Berita 9: Sosialisasi Portal Digital -->
+      <article class="news-card" data-tag="teknologi">
         <div class="news-thumb">
-          <img src="images/presentasi-lambang-amanat-1.jpeg" alt="Sosialisasi Portal Digital" loading="lazy">
+          <img src="images/presentasi-lambang-amanat-1.jpeg" alt="Sosialisasi Portal Digital Advokat" loading="lazy">
           <span class="news-tag">Teknologi</span>
         </div>
         <div class="news-content">
           <div class="news-meta">
-            <time datetime="2026-10-30">30 Oktober 2026</time>
+            <time datetime="2026-10-26">26 Oktober 2026</time>
             <span>•</span>
-            <span>Biro TI &amp; Transformasi</span>
+            <span>Bidang IT &amp; Media</span>
           </div>
           <h3 class="news-title">
             Sosialisasi Portal Digital Layanan Advokat Daring &amp; Pedoman Etik Kecerdasan Artifisial
           </h3>
           <p class="news-excerpt">
-            Demonstrasi tata kelola berbasis digital transparansi keuangan organisasi serta batasan etis penggunaan AI dalam penyusunan dokumen hukum.
+            Demonstrasi platform registrasi terpadu dan perumusan pedoman pemanfaatan AI yang bertanggung jawab guna menjaga kerahasiaan data perkara advokat.
           </p>
-          <a href="galeri.html" class="news-link">Selengkapnya ➔</a>
+          <a href="#" class="news-link" data-modal="modal_berita_5">Baca Ringkasan ➔</a>
         </div>
       </article>
 
-      <!-- Berita 8: Ikrar Bersama Pengurus -->
-      <article class="news-card">
+      <!-- Berita 10: Ikrar Moral Pengurus -->
+      <article class="news-card" data-tag="etika-profesi">
         <div class="news-thumb">
-          <img src="images/soliditas-salam-komando-pengurus.jpeg" alt="Ikrar Penegakan Nurani" loading="lazy">
+          <img src="images/soliditas-salam-komando-pengurus.jpeg" alt="Ikrar Moral Pengurus DPN" loading="lazy">
           <span class="news-tag">Etika Profesi</span>
         </div>
         <div class="news-content">
           <div class="news-meta">
-            <time datetime="2026-10-30">30 Oktober 2026</time>
+            <time datetime="2026-10-28">28 Oktober 2026</time>
             <span>•</span>
             <span>Dewan Kehormatan</span>
           </div>
@@ -1395,14 +1453,12 @@ h2 {
             Ikrar Bersama Jajaran Pengurus: "Pasal Boleh Dihafal, Nurani Jangan Ditinggal di Parkiran"
           </h3>
           <p class="news-excerpt">
-            Pimpinan DPN PERADI NOBILITI mengukuhkan komitmen moral bahwa penguasaan pasal perundang-undangan harus selaras dengan hati nurani penegak hukum.
+            Momen pembacaan komitmen moral pimpinan nasional di hadapan lambang negara, memperteguh prinsip officium nobile di atas kepentingan pragmatis.
           </p>
-          <a href="manifesto.html" class="news-link">Selengkapnya ➔</a>
+          <a href="#" class="news-link" data-modal="modal_berita_6">Baca Ringkasan ➔</a>
         </div>
       </article>
-      
     </div>
-
   </div>
 </section>
 </main>
@@ -1458,9 +1514,9 @@ h2 {
         <a href="https://www.facebook.com/profile.php?id=61595977707753" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook PERADI NOBILITI" title="Facebook Official"><svg><use href="#icon-facebook"/></svg></a>
         <a href="https://www.tiktok.com/@peradinobiliti?lang=en" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok PERADI NOBILITI" title="TikTok @peradinobiliti"><svg><use href="#icon-tiktok"/></svg></a>
         <a href="mailto:peradinobiliti1@gmail.com" class="social-btn" aria-label="Email Resmi PERADI NOBILITI" title="Email: peradinobiliti1@gmail.com"><svg><use href="#icon-mail"/></svg></a>
-      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v10.1.2b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
+      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v11b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
 <a href="#main" class="back-top" aria-label="Kembali ke atas"><svg class="icon"><use href="#arrow"/></svg></a>
-<!-- Floating WhatsApp Button & Popover (v10.1.2b) -->
+<!-- Floating WhatsApp Button & Popover (v11b) -->
 <div class="wa-floating-container" id="wa-floating-container">
   <div class="wa-floating-menu" id="wa-floating-menu" aria-hidden="true">
     <div class="wa-menu-header">
@@ -1503,7 +1559,7 @@ h2 {
 
 <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="dialog-close" aria-label="Tutup dialog"><svg class="icon"><use href="#plus"/></svg></button></div><div class="dialog-body" id="dialog-body"></div></dialog>
 <script>
-// Deklarasi helper global & WA Floating Handler paling awal (v10.1.2b)
+// Deklarasi helper global & WA Floating Handler paling awal (v11b)
 const $ = s => {
   if (!s || typeof s !== 'string' || !s.trim()) return null;
   try { return document.querySelector(s); } catch(e) { return null; }
@@ -2009,7 +2065,7 @@ if('IntersectionObserver' in window){
   });
 }
 
-// Dropdown sub-menu toggle for touch / click (v10.1.2b)
+// Dropdown sub-menu toggle for touch / click (v11b)
 $$('.nav-item-has-children > a[href="#"]').forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
@@ -2033,6 +2089,28 @@ document.addEventListener('click', e => {
     });
   }
 });
+
+
+// === Filter Tabs Berita (v11b) ===
+const beritaFilterBtns = $$('#berita-filters .filter-btn');
+const newsCards = $$('.news-grid .news-card');
+if(beritaFilterBtns.length && newsCards.length){
+  beritaFilterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      beritaFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      newsCards.forEach(card => {
+        if(f === 'all' || card.dataset.tag === f){
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
 
 </script>
 </body>
