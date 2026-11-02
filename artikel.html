@@ -1220,6 +1220,27 @@ h2 {
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+/* 3-Column Fixed Grid for Article Cards (v11b) */
+.article-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  margin-top: 30px !important;
+}
+@media (max-width: 992px) {
+  .article-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+@media (max-width: 640px) {
+  .article-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
 </style>
 </head>
 <body>

@@ -1162,6 +1162,27 @@ h2 {
   gap: 12px;
 }
 
+
+/* 3-Column Fixed Grid for News Cards (v11b) */
+.news-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  margin-top: 32px !important;
+}
+@media (max-width: 992px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+@media (max-width: 640px) {
+  .news-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1238,7 +1259,7 @@ h2 {
       <button class="filter-btn" data-filter="etika-profesi">Etika Profesi</button>
     </div>
 
-    <div class="news-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
+    <div class="news-grid">
       <!-- Berita / Artikel 1 (Tulung Agung iNEWS) -->
       <article class="news-card" data-tag="tulungagung-inews">
         <div class="news-thumb">
