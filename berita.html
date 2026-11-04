@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Konsep penyempurnaan desain PERADI NOBILITI. Integritas, independensi, dan akses keadilan.">
-<title>Berita Seputar Nobiliti & Penegakan Hukum — PERADI NOBILITI (v12b)</title>
+<title>Berita Seputar Nobiliti & Penegakan Hukum — PERADI NOBILITI (v12.1b)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -1224,11 +1224,11 @@ h2 {
 }
 
 
-/* === WIDGET SECTION: TERPOPULER, KATEGORI, LIST DPC (v12b - Gambar 1) === */
-.news-aux-grid {
+/* === WIDGET SECTION: 8 KOLOM BERURUTAN (2 BARIS x 4 KOLOM) (v12.1b) === */
+.news-aux-grid-8 {
   display: grid;
-  grid-template-columns: 2.2fr 1.2fr 1.4fr;
-  gap: 36px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px 26px;
   align-items: flex-start;
 }
 .aux-col {
@@ -1238,7 +1238,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .aux-bullet {
   width: 9px;
@@ -1249,7 +1249,7 @@ h2 {
   flex-shrink: 0;
 }
 .aux-title {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 800;
   color: #1a202c;
   letter-spacing: 0.08em;
@@ -1263,10 +1263,142 @@ h2 {
   background: #cbd5e1;
   display: inline-block;
 }
-.aux-popular-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+
+/* List Style for Aux Items */
+.aux-list {
+  display: flex;
+  flex-direction: column;
+}
+.aux-link-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.aux-link-item:last-child {
+  border-bottom: none;
+}
+.aux-link-item:hover .aux-link-text {
+  color: var(--gold-dark, #937328);
+  padding-left: 2px;
+}
+.aux-arrow {
+  font-weight: 700;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.aux-link-text {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: padding 0.2s ease, color 0.2s ease;
+}
+
+/* Popular List Style */
+.aux-popular-list {
+  display: flex;
+  flex-direction: column;
+}
+.popular-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.popular-item:last-child {
+  border-bottom: none;
+}
+.popular-item:hover .pop-text {
+  color: var(--gold-dark, #937328);
+}
+.popular-item:hover .pop-num {
+  color: var(--gold, #c6a668);
+}
+.pop-num {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+  min-width: 18px;
+  flex-shrink: 0;
+}
+.pop-text {
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1080px) {
+  .news-aux-grid-8 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+}
+@media (max-width: 600px) {
+  .news-aux-grid-8 {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+/* List Style for News & Agendas */
+.aux-news-list {
+  display: flex;
+  flex-direction: column;
+}
+.aux-link-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.aux-link-item:last-child {
+  border-bottom: none;
+}
+.aux-link-item:hover .aux-link-text {
+  color: var(--gold-dark, #937328);
+  padding-left: 2px;
+}
+.aux-arrow {
+  font-weight: 700;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+.aux-link-text {
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: padding 0.2s ease, color 0.2s ease;
+}
+
+/* Popular List Style */
+.aux-popular-list {
+  display: flex;
+  flex-direction: column;
 }
 .popular-item {
   display: flex;
@@ -1291,7 +1423,7 @@ h2 {
   font-weight: 800;
   color: #0f172a;
   line-height: 1.1;
-  min-width: 22px;
+  min-width: 20px;
   flex-shrink: 0;
 }
 .pop-text {
@@ -1303,10 +1435,17 @@ h2 {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.aux-cat-cols, .aux-dpc-cols {
+
+/* Category & DPC Grid */
+.aux-cat-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
+}
+.aux-dpc-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
 .cat-item, .dpc-item {
   display: flex;
@@ -1316,7 +1455,7 @@ h2 {
   font-size: 13px;
   color: #334155;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
   border-bottom: 1px dashed #e2e8f0;
 }
 .cat-item:last-child, .dpc-item:last-child {
@@ -1333,18 +1472,24 @@ h2 {
 }
 
 @media (max-width: 991px) {
-  .news-aux-grid {
+  .aux-3cols {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+  }
+  .aux-cat-dpc-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .aux-dpc-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 600px) {
-  .aux-popular-cols, .aux-cat-cols, .aux-dpc-cols {
+  .aux-cat-cols, .aux-dpc-grid-4 {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 }
-
 </style>
 </head>
 <body>
@@ -1655,123 +1800,270 @@ h2 {
   </div>
 </section>
 
-<!-- SECTION WIDGET BERITA TERPOPULER, KATEGORI & LIST DPC (v12b - Gambar 1) -->
-<section class="section news-aux-section" style="padding: 40px 0 70px; background: #fafbfc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+<!-- SECTION WIDGET 8 KOLOM: TERPOPULER, KATEGORI, LIST DPC, KABAR DPC, KABAR DPW, KABAR DPN, AGENDA PKPA, SUMPAH (v12.1b) -->
+<section class="section news-aux-section" style="padding: 50px 0 75px; background: #fafbfc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
   <div class="wrap">
-    <div class="news-aux-grid">
+    
+    <div class="news-aux-grid-8">
       
       <!-- KOLOM 1: TERPOPULER -->
-      <div class="aux-col aux-popular">
+      <div class="aux-col">
         <div class="aux-header">
           <span class="aux-bullet"></span>
           <h3 class="aux-title">TERPOPULER</h3>
           <span class="aux-line"></span>
         </div>
-        <div class="aux-popular-cols">
-          <!-- Sub-kolom 1-5 -->
-          <div class="aux-popular-subcol">
-            <a href="#" class="popular-item">
-              <span class="pop-num">1</span>
-              <span class="pop-text">jadwal pengambilan sumpah/janji advokat peradi nobiliti 2026...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">2</span>
-              <span class="pop-text">pendaftaran pendidikan khusus profesi advokat (pkpa) batch i...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">3</span>
-              <span class="pop-text">pengangkatan dan pengambilan sumpah advokat tinggi jawa timur...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">4</span>
-              <span class="pop-text">peradi nobiliti resmi hadir, filsafat hukum jadi fondasi advokat...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">5</span>
-              <span class="pop-text">kemenkumham ri terbitkan sk badan hukum ahu-0007740 nobiliti...</span>
-            </a>
-          </div>
-          <!-- Sub-kolom 6-10 -->
-          <div class="aux-popular-subcol">
-            <a href="#" class="popular-item">
-              <span class="pop-num">6</span>
-              <span class="pop-text">pembentukan lbh nobiliti: komitmen bantuan hukum cuma-cuma...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">7</span>
-              <span class="pop-text">kesiapan advokat nobiliti menghadapi kuhp &amp; kuhap baru 2026...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">8</span>
-              <span class="pop-text">prosedur dan syarat perpanjangan ktpa advokat tahun 2026...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">9</span>
-              <span class="pop-text">tata cara pengaduan pelanggaran kode etik advokat peradi nobiliti...</span>
-            </a>
-            <a href="#" class="popular-item">
-              <span class="pop-num">10</span>
-              <span class="pop-text">pedoman uu no. 18 tahun 2003 tentang advokat dan standardisasi mutu...</span>
-            </a>
-          </div>
+        <div class="aux-popular-list">
+          <a href="artikel.html" class="popular-item">
+            <span class="pop-num">1</span>
+            <span class="pop-text">peradi nobiliti resmi hadir, filsafat hukum jadi fondasi advokat...</span>
+          </a>
+          <a href="pendaftaran.html" class="popular-item">
+            <span class="pop-num">2</span>
+            <span class="pop-text">pendaftaran pendidikan khusus profesi advokat (pkpa) 2026 dibuka...</span>
+          </a>
+          <a href="#" class="popular-item">
+            <span class="pop-num">3</span>
+            <span class="pop-text">jadwal pengambilan sumpah/janji advokat peradi nobiliti 2026...</span>
+          </a>
+          <a href="berita.html" class="popular-item">
+            <span class="pop-num">4</span>
+            <span class="pop-text">kemenkumham ri terbitkan sk badan hukum ahu-0007740 nobiliti...</span>
+          </a>
+          <a href="artikel.html" class="popular-item">
+            <span class="pop-num">5</span>
+            <span class="pop-text">kesiapan advokat nobiliti menghadapi kuhp &amp; kuhap baru 2026...</span>
+          </a>
         </div>
       </div>
 
       <!-- KOLOM 2: KATEGORI -->
-      <div class="aux-col aux-categories">
+      <div class="aux-col">
         <div class="aux-header">
           <span class="aux-bullet"></span>
           <h3 class="aux-title">KATEGORI</h3>
           <span class="aux-line"></span>
         </div>
-        <div class="aux-cat-cols">
-          <div class="aux-cat-subcol">
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Berita</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Artikel Khusus</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Siaran Pers</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Kabar DPC</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Kegiatan</a>
-          </div>
-          <div class="aux-cat-subcol">
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Legalitas</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Kajian Hukum</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Layanan Publik</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> Etika Profesi</a>
-            <a href="#" class="cat-item"><span class="cat-arrow">&gt;</span> PKPA &amp; UPA</a>
-          </div>
+        <div class="aux-list">
+          <a href="berita.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Berita</span>
+          </a>
+          <a href="artikel.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Artikel Khusus</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Siaran Pers</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Kabar DPC</span>
+          </a>
+          <a href="dokumen.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Legalitas &amp; Dokumen</span>
+          </a>
+          <a href="artikel.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Kajian &amp; Opini Hukum</span>
+          </a>
         </div>
       </div>
 
       <!-- KOLOM 3: LIST DPC -->
-      <div class="aux-col aux-dpc">
+      <div class="aux-col">
         <div class="aux-header">
           <span class="aux-bullet"></span>
           <h3 class="aux-title">LIST DPC</h3>
           <span class="aux-line"></span>
         </div>
-        <div class="aux-dpc-cols">
-          <div class="aux-dpc-subcol">
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Samarinda</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Jakarta Barat</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Sidoarjo Raya</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Gorontalo</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Sukabumi</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Surabaya</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Bandung Raya</a>
-          </div>
-          <div class="aux-dpc-subcol">
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Purwokerto</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Kendari</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Madiun</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Palembang</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Jakarta Timur</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Malang Raya</a>
-            <a href="#" class="dpc-item"><span class="dpc-arrow">&gt;</span> Medan</a>
-          </div>
+        <div class="aux-list">
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Samarinda</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Jakarta Barat</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Sidoarjo Raya</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Surabaya</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Bandung Raya</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Medan</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- KOLOM 4: KABAR DPC -->
+      <div class="aux-col">
+        <div class="aux-header">
+          <span class="aux-bullet"></span>
+          <h3 class="aux-title">KABAR DPC</h3>
+          <span class="aux-line"></span>
+        </div>
+        <div class="aux-list">
+          <a href="berita.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPC Tulungagung Resmi Berdiri, Usung Filsafat Hukum &amp; Keadilan</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPC Jakarta Barat Gelar Bimbingan Teknis e-Court &amp; Litigasi Modern</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPC Sidoarjo Raya Resmikan Posko Pengaduan Bantuan Hukum Pro Bono</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPC Kota Samarinda Buka Pos Pendaftaran Peserta PKPA Angkatan I</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPC Surabaya Perkuat Kerja Sama Akses Bantuan Hukum Masyarakat</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- KOLOM 5: KABAR DPW -->
+      <div class="aux-col">
+        <div class="aux-header">
+          <span class="aux-bullet"></span>
+          <h3 class="aux-title">KABAR DPW</h3>
+          <span class="aux-line"></span>
+        </div>
+        <div class="aux-list">
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Rapat Koordinasi Wilayah (Rakorwil) DPW Jawa Timur di Surabaya</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Pembentukan Mandataris Kepengurusan DPW PERADI NOBILITI Jawa Tengah</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPW Jawa Barat Gelar Dialog Kesiapan Advokat Hadapi KUHP Baru</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Konsolidasi Pengurus DPW Sumatera Utara Perkuat Jejaring Posbakum</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPW Sulawesi Selatan Siapkan Verifikasi Calon Advokat Magang</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- KOLOM 6: KABAR DPN -->
+      <div class="aux-col">
+        <div class="aux-header">
+          <span class="aux-bullet"></span>
+          <h3 class="aux-title">KABAR DPN</h3>
+          <span class="aux-line"></span>
+        </div>
+        <div class="aux-list">
+          <a href="berita.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Konsolidasi Jajaran Pimpinan DPN: Meneguhkan Visi Nobiliti</span>
+          </a>
+          <a href="berita.html" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Kemenkumham RI Terbitkan SK Badan Hukum AHU-0007740 Nobiliti</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">DPN Nobiliti Matangkan Persiapan Pembentukan LBH di 38 Provinsi</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Audiensi Dewan Pimpinan Nasional Terkait Standardisasi Kurikulum Advokat</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Rilis Pedoman Penegakan Kode Etik &amp; Perlindungan Hak Imunitas</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- KOLOM 7: AGENDA PKPA -->
+      <div class="aux-col">
+        <div class="aux-header">
+          <span class="aux-bullet"></span>
+          <h3 class="aux-title">AGENDA PKPA</h3>
+          <span class="aux-line"></span>
+        </div>
+        <div class="aux-list">
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Pendidikan Khusus Profesi Advokat (PKPA) Batch I 2026 - Kelas Hybrid</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Bimtek Kurikulum &amp; Simulasi Ujian Profesi Advokat (UPA) 2026</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Workshop Hukum Acara Perdata &amp; Perancangan Kontrak Bisnis</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Pelatihan Kemahiran Litigasi Pidana Berbasis Pembaruan Hukum</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Batas Akhir Verifikasi Dokumen &amp; Registrasi Peserta UPA Batch I</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- KOLOM 8: SUMPAH -->
+      <div class="aux-col">
+        <div class="aux-header">
+          <span class="aux-bullet"></span>
+          <h3 class="aux-title">SUMPAH</h3>
+          <span class="aux-line"></span>
+        </div>
+        <div class="aux-list">
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Jadwal Sidang Pengambilan Sumpah Advokat Pengadilan Tinggi Jawa Timur</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Verifikasi Berkas Yudisial Calon Advokat Pengadilan Tinggi DKI Jakarta</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Gladi Resik Sidang Luar Biasa Pengambilan Sumpah PT Jawa Barat</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Jadwal Pengangkatan &amp; Sumpah Advokat Wilayah Hukum PT Jawa Tengah</span>
+          </a>
+          <a href="#" class="aux-link-item">
+            <span class="aux-arrow">&gt;</span>
+            <span class="aux-link-text">Pengumuman Kelulusan Berkas Administrasi Sumpah PT Sumatera Utara</span>
+          </a>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -1828,7 +2120,7 @@ h2 {
         <a href="https://www.facebook.com/profile.php?id=61595977707753" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook PERADI NOBILITI" title="Facebook Official"><svg><use href="#icon-facebook"/></svg></a>
         <a href="https://www.tiktok.com/@peradinobiliti?lang=en" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok PERADI NOBILITI" title="TikTok @peradinobiliti"><svg><use href="#icon-tiktok"/></svg></a>
         <a href="mailto:peradinobiliti1@gmail.com" class="social-btn" aria-label="Email Resmi PERADI NOBILITI" title="Email: peradinobiliti1@gmail.com"><svg><use href="#icon-mail"/></svg></a>
-      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v12b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
+      </div></div></div><div class="footer-bottom"><span>© 2026 PERADI NOBILITI · Konsep penyempurnaan desain (v12.1b)</span><span>Informasi di situs ini bukan nasihat hukum atas perkara tertentu.</span></div></div></footer>
 <a href="#main" class="back-top" aria-label="Kembali ke atas"><svg class="icon"><use href="#arrow"/></svg></a>
 <!-- Floating WhatsApp Button & Popover (v11.1b) -->
 <div class="wa-floating-container" id="wa-floating-container">
