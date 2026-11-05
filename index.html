@@ -1385,200 +1385,6 @@ h2 {
   }
 }
 
-/* === MARS VIDEO VOLUME CONTROLLER & MOBILE UI (v12.1b) === */
-.mars-unmute-overlay {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 10;
-  background: rgba(11, 25, 50, 0.92);
-  border: 1.5px solid var(--gold);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
-  transition: all 0.25s ease;
-}
-.mars-unmute-overlay:hover {
-  background: var(--gold);
-  color: #0b1932;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(198,166,104,0.4);
-}
-.mars-unmute-overlay .overlay-icon {
-  font-size: 20px;
-  line-height: 1;
-}
-.mars-unmute-overlay .overlay-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  line-height: 1.2;
-}
-.mars-unmute-overlay .overlay-text strong {
-  font-size: 13px;
-  letter-spacing: 0.02em;
-}
-.mars-unmute-overlay .overlay-text small {
-  font-size: 11px;
-  opacity: 0.85;
-}
-.mars-unmute-overlay.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.mars-volume-bar {
-  background: #08152c;
-  border-top: 1px solid rgba(198, 166, 104, 0.3);
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.mars-vol-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.mars-vol-toggle-btn {
-  background: rgba(198, 166, 104, 0.15);
-  border: 1px solid rgba(198, 166, 104, 0.4);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-}
-.mars-vol-toggle-btn:hover {
-  background: rgba(198, 166, 104, 0.3);
-  border-color: var(--gold);
-}
-.mars-vol-slider-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  min-width: 200px;
-  max-width: 380px;
-}
-.mars-slider-label {
-  font-size: 13px;
-  color: #c4d2e1;
-  font-weight: 600;
-  white-space: nowrap;
-}
-#mars-vol-slider {
-  flex: 1;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 6px;
-  border-radius: 3px;
-  background: #1c2e4c;
-  outline: none;
-  accent-color: var(--gold);
-  cursor: pointer;
-}
-#mars-vol-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--gold);
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(198,166,104,0.8);
-  border: 2px solid #fff;
-}
-.mars-percent-badge {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--gold);
-  min-width: 38px;
-  text-align: right;
-  font-family: monospace;
-}
-.mars-vol-presets {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.mars-preset-btn {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: #cbd5e1;
-  padding: 5px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.mars-preset-btn:hover {
-  border-color: var(--gold);
-  color: #fff;
-}
-.mars-preset-btn.active {
-  background: var(--gold);
-  color: #0b1932;
-  border-color: var(--gold);
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-  .mars-volume-bar {
-    padding: 14px;
-    gap: 12px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .mars-vol-left {
-    justify-content: space-between;
-    width: 100%;
-  }
-  .mars-vol-toggle-btn {
-    flex: 1;
-    justify-content: center;
-    padding: 10px 14px;
-    font-size: 14px;
-  }
-  .mars-vol-slider-wrap {
-    max-width: 100%;
-    width: 100%;
-  }
-  .mars-vol-presets {
-    justify-content: stretch;
-    width: 100%;
-  }
-  .mars-preset-btn {
-    flex: 1;
-    text-align: center;
-    padding: 8px 10px;
-    font-size: 13px;
-  }
-  .mars-unmute-overlay {
-    top: 10px;
-    right: 10px;
-    padding: 6px 12px;
-  }
-  .mars-unmute-overlay .overlay-text strong {
-    font-size: 12px;
-  }
-}
-
 </style>
 </head>
 <body>
@@ -1640,54 +1446,23 @@ h2 {
       <p style="color:#c4d2e1;font-size:16px;line-height:1.6;margin:0;">Lagu perjuangan kehormatan profesi advokat Indonesia: Meneguhkan integritas, keadilan, dan martabat <em>officium nobile</em> bagi seluruh penegak hukum.</p>
     </div>
 
-    <div class="mars-player-card" style="max-width:960px;margin:0 auto;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.5);border:1px solid rgba(198,166,104,0.4);">
-      
-      <!-- Video Frame Container -->
+    <div style="max-width:960px;margin:0 auto;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.5);border:1px solid rgba(198,166,104,0.4);">
       <div class="video-frame-wrap" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;">
         <iframe 
-          id="mars-yt-player"
-          src="https://www.youtube-nocookie.com/embed/Z_PhR5_1iO0?enablejsapi=1&amp;autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=Z_PhR5_1iO0&amp;controls=1&amp;rel=0" 
+          src="https://www.youtube-nocookie.com/embed/Z_PhR5_1iO0?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=Z_PhR5_1iO0&amp;controls=1&amp;rel=0" 
           title="MARS PERADI NOBILITI" 
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           allowfullscreen 
           loading="eager">
         </iframe>
-        
-        <!-- Mobile Quick Tap Unmute Overlay (Akses Cepat Pengaktifan Suara di Layar Sentuh) -->
-        <button type="button" id="mars-unmute-overlay" class="mars-unmute-overlay" onclick="marsActivateAudio(100)" aria-label="Aktifkan Suara Mars 100%">
-          <span class="overlay-icon">🔊</span>
-          <span class="overlay-text"><strong>Suara Mars: 100%</strong><small>Ketuk untuk dengarkan audio</small></span>
-        </button>
-      </div>
-
-      <!-- Dedicated Volume Control Bar (Sangat Jelas Terlihat di Mobile & Desktop) -->
-      <div class="mars-volume-bar" id="mars-volume-bar">
-        <div class="mars-vol-left">
-          <button type="button" class="mars-vol-toggle-btn" id="mars-vol-toggle" onclick="marsToggleMute()" aria-label="Toggle Suara Mars">
-            <span id="mars-speaker-icon" style="font-size:18px;">🔊</span>
-            <span id="mars-status-text">Suara: <strong>Aktif (100%)</strong></span>
-          </button>
-        </div>
-
-        <div class="mars-vol-slider-wrap">
-          <label for="mars-vol-slider" class="mars-slider-label">Volume:</label>
-          <input type="range" id="mars-vol-slider" min="0" max="100" value="100" oninput="marsSetVolume(this.value)" aria-label="Pengatur Volume Mars">
-          <span id="mars-vol-percent" class="mars-percent-badge">100%</span>
-        </div>
-
-        <div class="mars-vol-presets">
-          <button type="button" class="mars-preset-btn active" id="btn-vol-100" onclick="marsSetVolume(100)">100%</button>
-          <button type="button" class="mars-preset-btn" id="btn-vol-50" onclick="marsSetVolume(50)">50%</button>
-          <button type="button" class="mars-preset-btn" id="btn-vol-0" onclick="marsSetVolume(0)">Mute</button>
-        </div>
       </div>
     </div>
     
     <div style="text-align:center;margin-top:16px;">
       <small style="color:#94a3b8;font-size:13px;display:inline-flex;align-items:center;gap:6px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;color:var(--gold);"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-        <span>Pemutar Mars dilengkapi panel volume khusus di mobile/desktop. Volume otomatis disetel 100%.</span>
+        <span>Video otomatis berputar (autoplay). Klik ikon speaker pada pemutar video untuk mendengarkan audio mars.</span>
       </small>
     </div>
   </div>
@@ -3108,95 +2883,6 @@ if(beritaFilterBtns.length && newsCards.length){
   });
 }
 
-
-// === MARS VIDEO VOLUME CONTROLLER (v12.1b) ===
-let marsCurrentVolume = 100;
-let marsIsMuted = false;
-
-function marsPostMessage(func, args) {
-  const iframe = document.getElementById('mars-yt-player');
-  if (iframe && iframe.contentWindow) {
-    try {
-      iframe.contentWindow.postMessage(JSON.stringify({
-        event: 'command',
-        func: func,
-        args: args || []
-      }), '*');
-    } catch(err) {}
-  }
-}
-
-window.marsSetVolume = function(val) {
-  val = parseInt(val, 10);
-  if (isNaN(val)) val = 100;
-  val = Math.max(0, Math.min(100, val));
-  marsCurrentVolume = val;
-  marsIsMuted = (val === 0);
-
-  // Update slider UI
-  const slider = document.getElementById('mars-vol-slider');
-  if (slider) slider.value = val;
-  const badge = document.getElementById('mars-vol-percent');
-  if (badge) badge.textContent = val + '%';
-
-  // Update preset buttons
-  document.querySelectorAll('.mars-preset-btn').forEach(btn => btn.classList.remove('active'));
-  if (val === 100) document.getElementById('btn-vol-100')?.classList.add('active');
-  else if (val === 50) document.getElementById('btn-vol-50')?.classList.add('active');
-  else if (val === 0) document.getElementById('btn-vol-0')?.classList.add('active');
-
-  // Update icon & status text
-  const icon = document.getElementById('mars-speaker-icon');
-  const status = document.getElementById('mars-status-text');
-  if (val === 0) {
-    if (icon) icon.textContent = '🔇';
-    if (status) status.innerHTML = 'Suara: <strong>Senyap (0%)</strong>';
-    marsPostMessage('mute');
-  } else {
-    if (icon) icon.textContent = val > 50 ? '🔊' : '🔉';
-    if (status) status.innerHTML = 'Suara: <strong>Aktif (' + val + '%)</strong>';
-    marsPostMessage('unMute');
-    marsPostMessage('setVolume', [val]);
-  }
-
-  // Hide overlay if user adjusted volume
-  const overlay = document.getElementById('mars-unmute-overlay');
-  if (overlay) overlay.classList.add('hidden');
-};
-
-window.marsToggleMute = function() {
-  if (marsIsMuted || marsCurrentVolume === 0) {
-    marsSetVolume(100);
-  } else {
-    marsSetVolume(0);
-  }
-};
-
-window.marsActivateAudio = function(vol) {
-  marsSetVolume(vol || 100);
-  marsPostMessage('playVideo');
-};
-
-// Auto initialize volume 100% when iframe is ready & on initial interaction
-function initMarsVideoVolume() {
-  setTimeout(() => { marsSetVolume(100); }, 800);
-  setTimeout(() => { marsSetVolume(100); }, 2000);
-
-  // Browser Autoplay Policy listener: unmute on first tap/interaction anywhere
-  const activateOnFirstGesture = () => {
-    marsSetVolume(100);
-    window.removeEventListener('touchstart', activateOnFirstGesture);
-    window.removeEventListener('click', activateOnFirstGesture);
-  };
-  window.addEventListener('touchstart', activateOnFirstGesture, { passive: true });
-  window.addEventListener('click', activateOnFirstGesture, { passive: true });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMarsVideoVolume);
-} else {
-  initMarsVideoVolume();
-}
 
 </script>
 </body>
